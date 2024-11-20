@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suitboy Billy</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8FFM3J0J81"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8FFM3J0J81');
+</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-image: url('/data/bells.jpg');
+            background-repeat: repeat;
+            background-size: 50px 61px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .single-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 30px 0;
+        }
+
+        .single-container h2, .single-container p {
+            margin: 0;
+            word-break: break-word;
+            font-size: 2em;
+            background: linear-gradient(to right, #fff2aa, #a57d33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.1), 
+                0 0 5px rgba(255, 233, 171, 0.2), 
+                0 0 10px rgba(255, 234, 196, 0.2),
+                0 0 15px rgba(255, 245, 219, 0.4);
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 0px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .grid-2-col .body-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2-col {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            text-align: center;
+            z-index: 1;
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 65%;
+            animation: glow 7s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 2px rgb(255, 255, 222));
+            }
+            60% {
+                filter: drop-shadow(0 0 6px rgb(255, 255, 195));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                max-width: 30%;
+            }
+        }
+
+        .billy-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .billy-container img {
+            width: 85%;
+            height: auto;
+            margin-bottom: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @media (min-width: 376px) {
+            .billy-container img {
+                width: 60%;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .billy-container img {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .billy-container img {
+                width: 36%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .billy-container img {
+                width: 33%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .billy-container img {
+                width: 30%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .billy-container img {
+                width: 28%;
+            }
+        }
+
+        @media (min-width: 1800px) {
+            .billy-container img {
+                width: 26%;
+            }
+        }
+
+        .music-player {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.play-pause-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.play-pause-button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .music-player {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+        .scroll-down-button:hover {
+            color: #ffd478;
+        }
+        .scroll-down-button {
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 2em;
+            z-index: 2;
+            background : linear-gradient(to top, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0));
+            opacity: 1;
+            animation: blink 2s infinite; 
+            text-shadow: 
+                0 0 5px rgba(0, 0, 0, 0.2), 
+                0 0 5px rgba(0, 0, 0, 0.3), 
+                0 0 10px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(0, 0, 0, 0.6);
+        }
+           @keyframes blink {
+            0% {
+            opacity: 1;
+            }
+            50% {
+            opacity: 0.1;
+            }
+            100% {
+            opacity: 1;
+            }
+        }
+
+        .header-title {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(to right, #fff2aa, #a57d33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 1;
+            animation: glow 7s infinite alternate;
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                right: 50%;
+                left: 50%;
+                font-size: 1.5em;
+                transform: translateX(-50%);
+            }
+        }
+
+        .text-area p {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.7;
+            font-size: 1em;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .text-area, .body-image, .footer-logo, .footer-text {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            border-radius: 0px;
+            margin: 0px 0;
+            text-align: center;
+        }
+
+        .donut-chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .donut-chart-container {
+                width: 90%;
+            }
+
+            .public-sale-text, .contributors-artist-text {
+                font-size: 0.1em !important;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 10px 50px;
+            background: #000;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: 3px solid #fff;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .buttons a:hover {
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+
+        .public-sale:hover,
+        .contributors-artist:hover {
+            filter: drop-shadow(0 0 0.4px rgba(255, 255, 195, 0.5));
+            transition: filter 0.3s ease;
+        }
+
+        .public-sale:hover ~ .public-sale-text,
+        .contributors-artist:hover ~ .contributors-artist-text {
+            filter: drop-shadow(0 0 1px rgba(255, 255, 195, 0.5));
+            transition: filter 0.3s ease;
+        }
+
+        .chat-container {
+            padding: 10px;
+            background-color: #000000;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .right-container {
+            margin-left: 0%;
+        }
+
+        .chat-box {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            height: 380px;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 80%;
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        .a-message {
+            align-self: flex-start;
+            background-color: #1da1f2;
+            color: #fff;
+        }
+
+        .billy-message {
+            align-self: flex-end;
+            background-color: #2f3136;
+            color: #fff;
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .full-width-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.full-width-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .full-width-image-container img {
+        width: 100%;
+    }
+}
+.sub-area {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-text1 {
+    margin: 0 10px;
+    align-items: right;
+}
+
+.sub-text2 {
+    margin: 0 10px;
+    align-items: left;
+}
+
+a:link {
+  color : rgba(255, 236, 143, 0.881);
+}
+a:visited {
+  color : rgba(255, 232, 118, 0.881);
+}
+a:hover {
+  color : rgb(255, 255, 255);
+}
+a:active {
+  color : rgb(255, 255, 255)
+}
+
+    </style>
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Suitboy Billy">
+    <meta property="og:description" content="10K PFP Collections on Bellinals by the doctor">
+    <meta property="og:image" content="https://suitboy.net/data/thumbnail.png">
+    <meta property="og:url" content="https://suitboy.net">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suitboy Billy">
+    <meta name="twitter:description" content="10K PFP Collections on Bellinals by the doctor">
+    <meta name="twitter:image" content="https://suitboy.net/data/thumbnail.png">
+</head>
+<body>
+    <header>
+        <video autoplay muted loop playsinline>
+            <source src="/data/billyback.webm" type="video/webm">
+            <source src="/data/billyback.mp4" type="video/mp4">
+        </video>
+        <a href="#more" class="scroll-down-button">More Detail</br>▼</a>
+        <div class="header-title">The Symbol of Bellscoin Community Spirit</div>
+        <img src="/data/logo.webp" alt="Logo" class="logo">
+        <div class="billy-container">
+            <img src="/data/billy1.webp" alt="Billy Image" id="billy-image">
+        </div>
+    </header>
+    <br>
+    <div class="single-container">
+        <h2>'Make Billy Milly' Project</h2></div>
+    <div class="container">
+        <div class="grid-2-col">
+        <div class="wallet">
+            <p><h1><span id="walletAddress">BillyM2K's Bells Wallet</span></h1>
+            <div class="m2k"><img src="data/m2k.png"></div>
+            <p><button class="copy-btn" onclick="copyToClipboard()">Copy</button><span id="walletAddress">B5imYR6AdW27QbG4NGgijv4SA4F88iQVPz</span></p>
+            <p><h2><span id="usdBalance">Loading...</span></h2></p>
+            <p><span id="bellBalance">Loading...</span></p>
+            <h1>How to Make Billy Milly?</h1>
+            <h3>
+            <ol>
+                <li>Buy and Hold $BELLS</li>
+                <li>Donate some $BELLS to Billy</li>
+                <li>Spread awareness of $BELLS on X</li>
+            </ol>
+            </h3>
+        </div>
+        <div class="goals">
+            <h1>Now, Billy Can Buy</h1>
+            <div class="tier-container">
+                <div class="tier" data-goal="10000000">Luxury Yacht ($1,000,000)</div>
+                <div class="tier" data-goal="1000000">Nice House ($500,000)</div>
+                <div class="tier" data-goal="230000">Lamborghini Urus ($230,000)</div>
+                <div class="tier" data-goal="75000">Tesla Model S ($75,000)</div>
+                <div class="tier" data-goal="25000">Honda Civic ($23,000) </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        function copyToClipboard() {
+            const text = "B5imYR6AdW27QbG4NGgijv4SA4F88iQVPz";
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copy: ' + text);
+            }).catch(err => {
+                console.error('fail:', err);
+            });
+        }
+    </script>
+    <script>
+        async function fetchData() {
+            try {
+                // 첫 번째 API에서 Billy의 BELL 잔액 불러오기
+                const balanceRes = await fetch('https://electrs.nintondo.io/api/address/B5imYR6AdW27QbG4NGgijv4SA4F88iQVPz');
+                
+                if (!balanceRes.ok) throw new Error(`Balance API request failed with status ${balanceRes.status}`);
+                
+                const balanceData = await balanceRes.json();
+                const satoshiBalance = balanceData.chain_stats.funded_txo_sum;
+                
+                if (typeof satoshiBalance === 'undefined') {
+                    throw new Error("`funded_txo_sum` not found in the balance API response.");
+                }
+                
+                const bellBalance = satoshiBalance / 1e8;  // Satoshi to BELLS 단위로 변환
+                
+                // 두 번째 API에서 BELL의 현재 가격 불러오기
+                const priceRes = await fetch('https://api.nintondo.io/api/stats/bells');
+                
+                if (!priceRes.ok) throw new Error(`Price API request failed with status ${priceRes.status}`);
+                
+                const priceData = await priceRes.json();
+                const bellPrice = priceData.price;
+                
+                if (typeof bellPrice === 'undefined') {
+                    throw new Error("`price` not found in the price API response.");
+                }
+
+                const usdBalance = bellBalance * bellPrice;
+
+                // 잔액 표시
+                document.getElementById('bellBalance').textContent = `${bellBalance.toFixed(2)} BELLS`;
+                document.getElementById('usdBalance').textContent = `$${usdBalance.toFixed(2)}`;
+
+                // 각 티어의 목표 금액에 도달했는지 확인하여 색상 변경
+                const tiers = document.querySelectorAll('.tier');
+                tiers.forEach(tier => {
+                    const goal = parseFloat(tier.getAttribute('data-goal'));
+                    if (usdBalance >= goal) {
+                        tier.classList.add('green'); // 목표 달성 시 녹색으로
+                    } else {
+                        tier.classList.remove('green'); // 목표 미달성 시 기본색으로
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                document.getElementById('usdBalance').textContent = 'Error';
+                document.getElementById('bellBalance').textContent = 'Error';
+            }
+        }
+
+        // 페이지 로드 시 데이터 가져오기
+        fetchData();
+        // 60초마다 데이터 갱신
+        setInterval(fetchData, 60000);
+    </script>
+    
+    <div class="single-container" id="more">
+        <h2>Check Rarity Rank</h2>
+    </div>
+    <div class="container">
+    <form id="rankForm">
+        <label for="id">Put Your Suitboy Billy - Bellinals Inscription ID</label>
+        <input type="text" id="id" name="id" required>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+    <!-- Modal Structure -->
+    <div id="rankModal" class="modal">
+        <div class="modal-content">
+            <div id="modalResult" class="image-container">
+                <img id="resultImage" src="" alt="Image" />
+                <img id="frameImage" src="https://suitboy.net/data/frame.png" alt="Frame" class="frame" />
+            </div>
+            <div class="rank-text">Rarity Rank #<span id="rankValue"></span></div> <!-- RANK 텍스트가 표시될 부분 -->
+            <div class="button-container">
+                <button id="shareTwitter">Share on Twitter</button>
+            </div>
+            <span class="close-button" id="closeModal">&times;</span>
+        </div>
+    </div>    
+    
+    <script>
+        document.getElementById('rankForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 제출 이벤트 방지
+            
+            const inputId = document.getElementById('id').value; // 사용자 ID 가져오기
+            
+            fetch('/api/rank', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: inputId }) // 요청 본문에 ID 추가
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok'); // 네트워크 오류 처리
+                }
+                return response.json(); // JSON으로 변환
+            })
+            .then(data => {
+                const modal = document.getElementById('rankModal');
+                const resultImage = document.getElementById('resultImage'); // 랭크 이미지를 보여줄 img 요소
+                const rankValue = document.getElementById('rankValue'); // RANK 값을 보여줄 span 요소
+                
+                if (data.rank) {
+                    resultImage.src = data.image_url; // 랭크 이미지 설정
+                    rankValue.textContent = data.rank; // RANK 값 설정
+                    modal.style.display = "block"; // 모달 표시
+                    setupTwitterShareButton(data.rank, data.share_url); // 트위터 공유 버튼 설정
+                } else {
+                    resultImage.src = ''; // 랭크 이미지 초기화
+                    rankValue.textContent = ''; // RANK 값 초기화
+                    modal.style.display = "block"; // 모달 표시
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.'); // 사용자에게 오류 알림
+            });
+        });
+        
+        // 트위터 공유 버튼 클릭 이벤트 설정
+        function setupTwitterShareButton(rank, shareUrl) {
+            const shareButton = document.getElementById('shareTwitter');
+            shareButton.onclick = function() {
+                const text = `👔My @SuitboyBilly Rarity Rank is #${rank}!🔔Bellscoin Forever!`;
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`;
+                
+                window.open(twitterUrl, '_blank'); // 새 창으로 트위터 열기
+            };
+        }
+        
+        // 모달 닫기 버튼 클릭 시 모달 닫기
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('rankModal').style.display = "none"; // 모달 숨기기
+        });
+        
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('rankModal');
+            if (event.target === modal) {
+                modal.style.display = "none"; // 모달 숨기기
+            }
+        };
+        </script>
+        
+        
+    
+    <style>
+         .wallet, .goals {
+            padding: 10px;
+            margin: 0 0px;
+            border-radius: 20px;
+        }
+        .wallet {
+            font-size: 1em;
+            text-align: center;
+            width: 100%;
+        }
+        .goals {
+            width: 100%;
+        }
+        .wallet h2 {
+            background-color: #ffffff; 
+            border-radius: 50px;
+            font-size: 3em;
+            padding: 10px;
+            margin: 0 0px;
+            color: #000000;
+            width: 95%;
+            align-items: cneter;
+        }
+        .m2k {
+            margin: 0 0px;
+        }
+        .goals h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #ffffff;
+        }
+        .tier {font-size: 20px; padding: 18px; margin: 18px; text-align: center; background-color: #555; border-radius: 50px; color: white; width: 100%;}
+        .tier.green { background-color: #4CAF50; color: white; width: 100%;} /* 녹색 배경 클래스 */
+        .tier-container { display: inline-block; text-align: center; width: 85%; margin: 0 -5px;}
+
+.rank-text {
+    text-align: center; /* 중앙 정렬 */
+    margin-bottom: 10px; /* 아래쪽 여백 */
+    margin: 0;
+    font-size: 3em;
+    background: linear-gradient(to right, #fff2aa, #a57d33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.1), 
+                0 0 5px rgba(255, 233, 171, 0.2), 
+                0 0 10px rgba(255, 234, 196, 0.2),
+                0 0 15px rgba(255, 245, 219, 0.4);
+}
+
+
+.image-container {
+    position: relative; /* 상대 위치 설정 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+}
+
+#resultImage {
+    display: block; /* 블록 요소로 설정 */
+    max-width: 100%; /* 이미지 크기 제한 */
+    height: auto; /* 자동 비율 유지 */
+}
+
+.frame {
+    position: absolute; /* 절대 위치 설정 */
+    top: 0; /* 상단 정렬 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 액자 너비 */
+    height: auto; /* 자동 비율 유지 */
+    pointer-events: none; /* 클릭 이벤트 무시 */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* 폰트 설정 */
+    background-color: #121212; /* 배경 색상 */
+    color: #ffffff; /* 기본 글자 색상 */
+}
+
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 고정 위치 */
+    z-index: 1000; /* 상위 레이어 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    overflow: auto; /* 필요 시 스크롤 가능 */
+    background-color: rgba(0, 0, 0, 0.8); /* 반투명 검정색 배경 */
+}
+
+.modal-content {
+    margin: 2% auto; /* 상단에서 15% 거리 */
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px; /* 둥근 모서리 */
+    width: auto; /* 너비 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+}
+
+.close-button {
+    color: #ffffff; /* 닫기 버튼 색상 */
+    float: center;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff6666; /* 마우스 오버 시 색상 */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#rankForm {
+    display: flex; /* 플렉스 박스 사용 */
+    font-size: 1.5em;
+    text-align: center;
+    flex-direction: column; /* 세로 정렬 */
+    gap: 10px; /* 요소 간 간격 */
+}
+
+input[type="text"] {
+    padding: 10px; /* 안쪽 여백 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 모서리 */
+    background-color: #333; /* 배경 색상 */
+    color: #fff; /* 글자 색상 */
+}
+
+button {
+    margin: 1%; /* 상단에서 15% 거리 */
+    padding: 10px; /* 안쪽 여백 */
+    background-color: #6200ea; /* 버튼 배경 색상 */
+    color: #ffffff; /* 버튼 글자 색상 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+}
+
+button:hover {
+    background-color: #3700b3; /* 마우스 오버 시 색상 */
+}
+
+    </style>
+    
+    
+    <div class="container">
+        <div class="single-container">
+            <h2>What is Suitboy Billy?</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <img src="/data/suitboy.webp" alt="Body Image">
+            </div>
+            <div class="text-area">
+                <p> This is the collection of 10K PFPs on Bellinals, created by <a href="https://x.com/DrBeltoshi">Dr. Beltoshi</a> from the Bellscoin community.</p>
+                <br>
+                <p> Inspired by 'Animal Crossing', these quirky characters sometimes mix with animals. Why the suits, you ask? To keep things classy in the memecoin world, which can be a bit rude sometimes.</p>
+                <br>
+                <p> Now, just a heads up—this collection isn’t an investment. The value might go to zero. But if everyone in the Bellscoin community could snag one and set it as their PFP, it would be amazing!</p>
+                <br>
+                <p> Let’s spread the word about Bellscoin and have some fun with it!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>Why'd this collection get dropped?</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="chat-container">
+                <div class="chat-box" id="chatBox">
+                    <div class="message a-message" id="message1">Anon : Billy! Plz come back to the Bellscoin fam! 🙏</div>
+                    <div class="message billy-message" id="message2">BillyM2K : ?</div>
+                    <div class="message a-message" id="message3">Anon : We need you!</div>
+                    <div class="message billy-message" id="message2">BillyM2K : Why?</div>
+                    <div class="message a-message" id="message3">Anon : Pump my Bellscoin bags! 🚀💰</div>
+                    <div class="message billy-message" id="message4">BillyM2K : 🤦‍♂️</div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="text-area">
+                    <p> Some rude folks are tagging or messaging <a href="https://x.com/BillyM2k">BillyM2K</a> just because he founded Bellscoin ages ago. He created it over 10 years ago, but that doesn't mean he has any reason to do anything for the newly revived Bellscoin community.</p>
+                    <br>
+                    <p> Instead of expecting the original founder to pump your bags with a tweet, wouldn't it be better to think of ways to show him some respect? That's why I planned this collection from the start to donate Bellscoin to him.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>So BillyM2K has Bellscoin? Yes</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <img src="data/wallet.webp" alt="Body Image">
+            </div>
+            <div class="text-area">
+                <p> BillyM2K is the OG founder of Bellscoin, but he barely owns any. He even tweeted asking the Bellscoin community to share some, and he only got 4,441.62 BEL (shoutout to the folks who sent him some, though).</p>
+                <br>
+                <p> The Bellscoin community keeps bragging about it being the first meme coin and him being the founder, but he only holds like 0.001% of the supply. Damn, that’s just nuts.</p>
+                <br>
+                <p> If you were him, would you still support Bellscoin?</p>
+                <br>
+                <p><b>[Updated]</b> Thanks to the strong Bellscoin community, the collection has been successfully sold, and we have completed a donation of 100K $BELLS to him. Please refer to the 'Make Billy Milly' Project at the top for the real-time holding status of BillyM2K.</p>
+            </div>
+        </div>
+        <div class="single-container">
+            <h2>The goal is to donate 100K Bellscoin to BillyM2K. [Complete]</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="donut-chart-container">
+                <svg viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
+                            <stop offset="0%" style="stop-color:#ffef9e;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#ffbd2d;stop-opacity:1"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#afafaf;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+                    <circle r="15" cx="18" cy="18" class="public-sale" style="fill: none; stroke: url(#grad1); stroke-width: 5; stroke-dasharray: 90 11; stroke-dashoffset: 71.9;"></circle>
+                    <circle r="14" cx="18" cy="19" class="contributors-artist" style="fill: none; stroke: url(#grad2); stroke-width: 5; stroke-dasharray: 10 87; stroke-dashoffset: 80;"></circle>
+                    <text x="18" y="15" text-anchor="middle" font-size="2" fill="#FFF" class="public-sale-text">Public Launchpad</text>
+                    <text x="18" y="18.5" text-anchor="middle" font-size="2.5" fill="#ffbd2d" font-weight="bold" class="public-sale-text">90%</text>
+                    <text x="18" y="25" text-anchor="middle" font-size="1.5" fill="#FFF" class="contributors-artist-text">Artist & Contributors</text>
+                    <text x="18" y="27.5" text-anchor="middle" font-size="1.5" fill="#afafaf" class="contributors-artist-text">10%</text>
+                </svg>
+            </div>
+            <div class="text-area">
+                <p> There will be a public launchpad of 9,000 PFPs through Nintondo Marketplace. The remaining 1,000 PFPs will be reserved for the artist and distributed over time to those who have contributed or will contribute to the Bellscoin community.</p>
+                <br>
+                <p> Each PFP in the public launchpad is priced at 13 BEL. If all PFPs are sold, a total of 117,000 BEL will be accumulated.</p>
+                <br>
+                <p> The ultimate goal is to donate 100,000 BEL to BillyM2K. The remaining 17,000 BEL will be used to cover market fees, minting costs, and website development and maintenance expenses.</p>
+                    
+            </div>
+        </div>
+        <div class="single-container">
+            <h2>Where can the collection be traded?</h2>
+        </div>
+        <div class="single-container buttons">
+            <a href="https://nintondo.io/market/collection/suitboy_billy" target="_blank">Buy on Nintondo</a>
+        </div>
+        <div class="single-container buttons"><a href="https://bells.ordinalswallet.com/collection/suitboy-billy" target="_blank">Buy on OrdinalsWallet</a>
+        </div>
+    
+        <br>
+        <div class="sub-area">
+        <span class="sub-text1">Powered by</span>
+        <img src="/data/nintondo.png">
+        <span class="sub-text2">Nintondo</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>Suitboy Billy Memes</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <img src="data/meme1.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme2.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme3.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme4.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme5.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme6.webp" alt="Body Image">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="sub-area">
+            <a href="https://x.com/SuitboyBilly" target="_blank"><img src="data/x.png" class="sub-text1"></a>
+            <a href="https://discord.gg/vctd3N8eqP" target="_blank"><img src="data/discord.png" class="sub-text2"></a>
+        </div>
+        <div class="single-container">
+            <p>Memecoin culture continues.<br>Don't fade OG.</p>
+        </div>
+        <div class="full-width-image-container">
+            <img src="data/end.webp" alt="End Image">
+        </div>
+    </div>
+    </footer>
+    <div class="music-player">
+        <button id="playPauseBtn" class="play-pause-button">🎧</button>
+        <audio id="audio" src="/data/music.mp3"></audio>
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 이미지 슬라이드 쇼 기능
+    const images = [
+        '/data/billy1.webp',
+        '/data/billy2.webp',
+        '/data/billy3.webp',
+        '/data/billy4.webp',
+        '/data/billy5.webp',
+        '/data/billy6.webp',
+        '/data/billy7.webp',
+        '/data/billy8.webp',
+        '/data/billy9.webp',
+        '/data/billy10.webp',
+        '/data/billy11.webp',
+        '/data/billy12.webp'
+    ];
+    let currentIndex = 0;
+    const billyImageElement = document.getElementById('billy-image');
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        billyImageElement.src = images[currentIndex];
+    }
+
+    setInterval(showNextImage, 1000);
+
+    // 채팅 메시지 애니메이션
+    const chatBox = document.getElementById("chatBox");
+    const messages = Array.from(chatBox.children);
+
+    function showMessages() {
+        messages.forEach(message => chatBox.removeChild(message));
+        messages.forEach((message, index) => {
+            setTimeout(() => {
+                chatBox.appendChild(message);
+                message.style.animation = "slideDown 1s forwards";
+            }, index * 2000);
+        });
+        setTimeout(showMessages, messages.length * 2000 + 1000);
+    }
+
+    showMessages();
+
+    // 스크롤 다운 버튼 기능
+    const scrollLink = document.querySelector(".scroll-down-button");
+
+    function scrollToContent() {
+        const moreContent = document.getElementById("more");
+        moreContent.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    scrollLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        scrollToContent();
+    });
+
+    // 음악 재생 기능
+    const audioElement = document.getElementById('audio');
+    const playPauseButton = document.getElementById('playPauseBtn');
+
+    playPauseButton.addEventListener('click', function() {
+        if (audioElement.paused) {
+            audioElement.play().catch(error => {
+                console.error("Playback error: ", error);
+            });
+            playPauseButton.textContent = '🔇'; // Change to pause icon
+        } else {
+            audioElement.pause();
+            playPauseButton.textContent = '🎧'; // Change to play icon
+        }
+    });
+});
+    </script>       
+</body>
+</html>
