@@ -1,56 +1,667 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BITCAT - Your Guardian of Bitcoin Prosperity</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bitcat</title>
+    <!-- Google tag (gtag.js) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8FFM3J0J81');
+</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+       .sour-gummy-fonts {
+            font-family: "Sour Gummy", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-variation-settings:
+            "wdth" 500;
+       }
+       .body {
+            font-family: 'Sour Gummy', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-image: url('/data/bells.jpg');
+            background-repeat: repeat;
+            background-size: 50px 61px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .single-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 30px 0;
+        }
+
+        .single-container h2, .single-container p {
+            margin: 0;
+            word-break: break-word;
+            font-size: 2em;
+            background: linear-gradient(to right, #fff2aa, #a57d33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.1), 
+                0 0 5px rgba(255, 233, 171, 0.2), 
+                0 0 10px rgba(255, 234, 196, 0.2),
+                0 0 15px rgba(255, 245, 219, 0.4);
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 0px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .grid-2-col .body-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2-col {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            text-align: center;
+            z-index: 1;
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 65%;
+            animation: glow 7s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 2px rgb(255, 255, 222));
+            }
+            60% {
+                filter: drop-shadow(0 0 6px rgb(255, 255, 195));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                max-width: 30%;
+            }
+        }
+
+        .billy-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .billy-container img {
+            width: 85%;
+            height: auto;
+            margin-bottom: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @media (min-width: 376px) {
+            .billy-container img {
+                width: 60%;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .billy-container img {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .billy-container img {
+                width: 36%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .billy-container img {
+                width: 33%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .billy-container img {
+                width: 30%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .billy-container img {
+                width: 28%;
+            }
+        }
+
+        @media (min-width: 1800px) {
+            .billy-container img {
+                width: 26%;
+            }
+        }
+
+        .music-player {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.play-pause-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.play-pause-button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .music-player {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+        .scroll-down-button:hover {
+            color: #ffd478;
+        }
+        .scroll-down-button {
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 2em;
+            z-index: 2;
+            background : linear-gradient(to top, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0));
+            opacity: 1;
+            animation: blink 2s infinite; 
+            text-shadow: 
+                0 0 5px rgba(0, 0, 0, 0.2), 
+                0 0 5px rgba(0, 0, 0, 0.3), 
+                0 0 10px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(0, 0, 0, 0.6);
+        }
+           @keyframes blink {
+            0% {
+            opacity: 1;
+            }
+            50% {
+            opacity: 0.1;
+            }
+            100% {
+            opacity: 1;
+            }
+        }
+
+        .header-title {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(to right, #fff2aa, #a57d33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 1;
+            animation: glow 7s infinite alternate;
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                right: 50%;
+                left: 50%;
+                font-size: 1.5em;
+                transform: translateX(-50%);
+            }
+        }
+
+        .text-area p {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.7;
+            font-size: 1em;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .text-area, .body-image, .footer-logo, .footer-text {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            border-radius: 0px;
+            margin: 0px 0;
+            text-align: center;
+        }
+
+        .donut-chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .donut-chart-container {
+                width: 90%;
+            }
+
+            .public-sale-text, .contributors-artist-text {
+                font-size: 0.1em !important;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 10px 50px;
+            background: #000;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: 3px solid #fff;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .buttons a:hover {
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .full-width-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.full-width-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .full-width-image-container img {
+        width: 100%;
+    }
+}
+.sub-area {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-text1 {
+    margin: 0 10px;
+    align-items: right;
+}
+
+.sub-text2 {
+    margin: 0 10px;
+    align-items: left;
+}
+
+a:link {
+  color : rgba(255, 236, 143, 0.881);
+}
+a:visited {
+  color : rgba(255, 232, 118, 0.881);
+}
+a:hover {
+  color : rgb(255, 255, 255);
+}
+a:active {
+  color : rgb(255, 255, 255)
+}
+
+    </style>
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Bitcat">
+    <meta property="og:description" content="Bitcat Solana">
+    <meta property="og:image" content="https://beltoshi.github.io/bitcat.github.io/data/thumbnail.png">
+    <meta property="og:url" content="https://beltoshi.github.io/bitcat.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bitcat">
+    <meta name="twitter:description" content="Bitcat Solana">
+    <meta name="twitter:image" content="hhttps://beltoshi.github.io/bitcat.github.io/thumbnail.png">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="bitcat_logo.png" alt="Bitcat Logo" class="logo">
-            <h1>BITCAT</h1>
-            <p>Your Guardian of Bitcoin Prosperity</p>
+        <video autoplay muted loop playsinline>
+            <source src="data/back.webm" type="video/webm">
+            <source src="data/back.mp4" type="video/mp4">
+        </video>
+        <a href="#more" class="scroll-down-button"></br>▼</a>
+        <div class="header-title">Your Guardian of Bitcoin Prosperity</div>
+        <img src="data/bitcat.png" alt="Logo" class="logo">
+        <div class="billy-container">
+            <img src="data/bitcat.gif" alt="Billy Image" id="billy-image">
         </div>
     </header>
-    <main>
-        <section class="buy-section">
-            <button class="buy-now">BUY NOW</button>
-        </section>
+    <br>
 
-        <section class="description-section">
-            <div class="text-content">
-                <h2>Your Guardian of Bitcoin Prosperity</h2>
-                <p><strong>NETWORK:</strong> Solana</p>
-                <p><strong>LP BURNT / CA RENOUNCED</strong></p>
-                <p><strong>TAXES: 0% / SUPPLY: 1B</strong></p>
-                <p>Born alongside Bitcoin, BITCAT is the mystical feline guardian of the blockchain. With its nine lives, it symbolizes Bitcoin's strength, precision, and infinite potential. BITCAT guards prosperity with each, ensuring your wealth grows securely with every transaction. Legend says it watches over block numbers in the network with deep abundance and faith.</p>
-                <p>Join the BITCAT community and let this charming cat guide your journey toward financial freedom. Embrace BITCAT, the mascot of Bitcoin!</p>
-            </div>
-            <div class="social-icons">
-                <img src="solana-icon.png" alt="Solana">
-                <img src="binance-icon.png" alt="Binance">
-                <img src="gate-io-icon.png" alt="Gate.io">
-                <img src="mexc-icon.png" alt="MEXC">
-                <img src="xt-icon.png" alt="XT">
-                <img src="coinex-icon.png" alt="CoinEx">
-            </div>
-        </section>
+  
+        
+    
+    <style>
 
-        <section class="footer">
-            <div class="footer-content">
-                <p>Listed on:</p>
-                <div class="exchange-icons">
-                    <img src="gate-io-logo.png" alt="Gate.io">
-                    <img src="lb-ank-logo.png" alt="LB Anx">
-                    <img src="bix-logo.png" alt="BIX">
-                </div>
-                <div class="buy-links">
-                    <a href="#">How to buy</a>
+.image-container {
+    position: relative; /* 상대 위치 설정 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+}
+
+.frame {
+    position: absolute; /* 절대 위치 설정 */
+    top: 0; /* 상단 정렬 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 액자 너비 */
+    height: auto; /* 자동 비율 유지 */
+    pointer-events: none; /* 클릭 이벤트 무시 */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* 폰트 설정 */
+    background-color: #121212; /* 배경 색상 */
+    color: #ffffff; /* 기본 글자 색상 */
+}
+
+    </style>
+    
+    <div class="single-container">
+        <h2>Your Guardian of Bitcoin Prosperity</h2></div>
+    <div class="container">
+            <p><button class="copy-btn" onclick="copyToClipboard()">Copy</button><span id="walletAddress">B5imYR6AdW27QbG4NGgijv4SA4F88iQVPz</span></p>
+    </div>
+    <script>
+        function copyToClipboard() {
+            const text = "B5imYR6AdW27QbG4NGgijv4SA4F88iQVPz";
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copy: ' + text);
+            }).catch(err => {
+                console.error('fail:', err);
+            });
+        }
+    </script>
+    <div class="container">
+        <div class="single-container">
+            <h2>What is Suitboy Billy?</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <img src="/data/suitboy.webp" alt="Body Image">
+            </div>
+            <div class="text-area">
+                <p> This is the collection of 10K PFPs on Bellinals, created by <a href="https://x.com/DrBeltoshi">Dr. Beltoshi</a> from the Bellscoin community.</p>
+                <br>
+                <p> Inspired by 'Animal Crossing', these quirky characters sometimes mix with animals. Why the suits, you ask? To keep things classy in the memecoin world, which can be a bit rude sometimes.</p>
+                <br>
+                <p> Now, just a heads up—this collection isn’t an investment. The value might go to zero. But if everyone in the Bellscoin community could snag one and set it as their PFP, it would be amazing!</p>
+                <br>
+                <p> Let’s spread the word about Bellscoin and have some fun with it!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>Why'd this collection get dropped?</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="chat-container">
+                <div class="chat-box" id="chatBox">
+                    <div class="message a-message" id="message1">Anon : Billy! Plz come back to the Bellscoin fam! 🙏</div>
+                    <div class="message billy-message" id="message2">BillyM2K : ?</div>
+                    <div class="message a-message" id="message3">Anon : We need you!</div>
+                    <div class="message billy-message" id="message2">BillyM2K : Why?</div>
+                    <div class="message a-message" id="message3">Anon : Pump my Bellscoin bags! 🚀💰</div>
+                    <div class="message billy-message" id="message4">BillyM2K : 🤦‍♂️</div>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="right-container">
+                <div class="text-area">
+                    <p> Some rude folks are tagging or messaging <a href="https://x.com/BillyM2k">BillyM2K</a> just because he founded Bellscoin ages ago. He created it over 10 years ago, but that doesn't mean he has any reason to do anything for the newly revived Bellscoin community.</p>
+                    <br>
+                    <p> Instead of expecting the original founder to pump your bags with a tweet, wouldn't it be better to think of ways to show him some respect? That's why I planned this collection from the start to donate Bellscoin to him.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>So BillyM2K has Bellscoin? Yes</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <img src="data/wallet.webp" alt="Body Image">
+            </div>
+            <div class="text-area">
+                <p> BillyM2K is the OG founder of Bellscoin, but he barely owns any. He even tweeted asking the Bellscoin community to share some, and he only got 4,441.62 BEL (shoutout to the folks who sent him some, though).</p>
+                <br>
+                <p> The Bellscoin community keeps bragging about it being the first meme coin and him being the founder, but he only holds like 0.001% of the supply. Damn, that’s just nuts.</p>
+                <br>
+                <p> If you were him, would you still support Bellscoin?</p>
+                <br>
+                <p><b>[Updated]</b> Thanks to the strong Bellscoin community, the collection has been successfully sold, and we have completed a donation of 100K $BELLS to him. Please refer to the 'Make Billy Milly' Project at the top for the real-time holding status of BillyM2K.</p>
+            </div>
+        </div>
+        <div class="single-container">
+            <h2>The goal is to donate 100K Bellscoin to BillyM2K. [Complete]</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="donut-chart-container">
+                <svg viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
+                            <stop offset="0%" style="stop-color:#ffef9e;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#ffbd2d;stop-opacity:1"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#afafaf;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+                    <circle r="15" cx="18" cy="18" class="public-sale" style="fill: none; stroke: url(#grad1); stroke-width: 5; stroke-dasharray: 90 11; stroke-dashoffset: 71.9;"></circle>
+                    <circle r="14" cx="18" cy="19" class="contributors-artist" style="fill: none; stroke: url(#grad2); stroke-width: 5; stroke-dasharray: 10 87; stroke-dashoffset: 80;"></circle>
+                    <text x="18" y="15" text-anchor="middle" font-size="2" fill="#FFF" class="public-sale-text">Public Launchpad</text>
+                    <text x="18" y="18.5" text-anchor="middle" font-size="2.5" fill="#ffbd2d" font-weight="bold" class="public-sale-text">90%</text>
+                    <text x="18" y="25" text-anchor="middle" font-size="1.5" fill="#FFF" class="contributors-artist-text">Artist & Contributors</text>
+                    <text x="18" y="27.5" text-anchor="middle" font-size="1.5" fill="#afafaf" class="contributors-artist-text">10%</text>
+                </svg>
+            </div>
+            <div class="text-area">
+                <p> There will be a public launchpad of 9,000 PFPs through Nintondo Marketplace. The remaining 1,000 PFPs will be reserved for the artist and distributed over time to those who have contributed or will contribute to the Bellscoin community.</p>
+                <br>
+                <p> Each PFP in the public launchpad is priced at 13 BEL. If all PFPs are sold, a total of 117,000 BEL will be accumulated.</p>
+                <br>
+                <p> The ultimate goal is to donate 100,000 BEL to BillyM2K. The remaining 17,000 BEL will be used to cover market fees, minting costs, and website development and maintenance expenses.</p>
+                    
+            </div>
+        </div>
+        <div class="single-container">
+            <h2>Where can the collection be traded?</h2>
+        </div>
+        <div class="single-container buttons">
+            <a href="https://nintondo.io/market/collection/suitboy_billy" target="_blank">Buy on Nintondo</a>
+        </div>
+        <div class="single-container buttons"><a href="https://bells.ordinalswallet.com/collection/suitboy-billy" target="_blank">Buy on OrdinalsWallet</a>
+        </div>
+    
+        <br>
+        <div class="sub-area">
+        <span class="sub-text1">Powered by</span>
+        <img src="/data/nintondo.png">
+        <span class="sub-text2">Nintondo</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>Suitboy Billy Memes</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <img src="data/meme1.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme2.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme3.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme4.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme5.webp" alt="Body Image">
+            </div>
+            <div class="body-image">
+                <img src="data/meme6.webp" alt="Body Image">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="sub-area">
+            <a href="https://x.com/SuitboyBilly" target="_blank"><img src="data/x.png" class="sub-text1"></a>
+            <a href="https://discord.gg/vctd3N8eqP" target="_blank"><img src="data/discord.png" class="sub-text2"></a>
+        </div>
+        <div class="single-container">
+            <p>Memecoin culture continues.<br>Don't fade OG.</p>
+        </div>
+        <div class="full-width-image-container">
+            <img src="data/end.webp" alt="End Image">
+        </div>
+    </div>
+    </footer>
+    <div class="music-player">
+        <button id="playPauseBtn" class="play-pause-button">🎧</button>
+        <audio id="audio" src="/data/music.mp3"></audio>
+    </div>
+    <script>
+    // 스크롤 다운 버튼 기능
+    const scrollLink = document.querySelector(".scroll-down-button");
+
+    function scrollToContent() {
+        const moreContent = document.getElementById("more");
+        moreContent.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    scrollLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        scrollToContent();
+    });
+
+    // 음악 재생 기능
+    const audioElement = document.getElementById('audio');
+    const playPauseButton = document.getElementById('playPauseBtn');
+
+    playPauseButton.addEventListener('click', function() {
+        if (audioElement.paused) {
+            audioElement.play().catch(error => {
+                console.error("Playback error: ", error);
+            });
+            playPauseButton.textContent = '🔇'; // Change to pause icon
+        } else {
+            audioElement.pause();
+            playPauseButton.textContent = '🎧'; // Change to play icon
+        }
+    });
+});
+    </script>       
 </body>
 </html>
