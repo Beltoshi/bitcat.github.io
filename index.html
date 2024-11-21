@@ -246,13 +246,13 @@
 
         @media (min-width: 576px) {
             .logo {
-                max-width: 70%;
+                max-width: 30%;
             }
         }
 
         @media (min-width: 768px) {
             .logo {
-                max-width: 50%;
+                max-width: 34%;
             }
         }
 
@@ -282,13 +282,13 @@
 
         @media (min-width: 376px) {
             .bitcat-container img {
-                width: 100%;
+                width: 60%;
             }
         }
 
         @media (min-width: 576px) {
             .bitcat-container img {
-                width: 50%;
+                width: 55%;
             }
         }
 
@@ -300,13 +300,13 @@
 
         @media (min-width: 992px) {
             .bitcat-container img {
-                width: 45%;
+                width: 48%;
             }
         }
 
         @media (min-width: 1200px) {
             .bitcat-container img {
-                width: 40%;
+                width: 48%;
             }
         }
 
@@ -644,21 +644,24 @@ a:active {
         <img src="data/bitcat.png" alt="Logo" class="logo">
         <button class="copy-button" onclick="copyToClipboard()">
             <i class="fas fa-copy"></i> <!-- 복사 아이콘 -->
-            <span class="button-text" id="walletAddress">4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump</span> <!-- 주소 -->
-          </button>           
+            <span class="button-text" id="Address">4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump</span> <!-- 복사할 텍스트 -->
+        </button>             
           <script>
-            function copyToClipboard() {
-    const text = document.getElementById('walletAddress').innerText;
-    navigator.clipboard.writeText(text).then(() => {
-        alert('Copied: ' + text);  // 이 부분은 원하면 알림으로 대체 가능
-        const button = document.querySelector('.copy-button');
-        button.classList.add('copied');
-        setTimeout(() => {
-            button.classList.remove('copied');
-        }, 2000);  // 2초 뒤에 성공 메시지 사라짐
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
-    });
+        function copyToClipboard() {
+    const textElement = document.getElementById('Address');
+    if (textElement) {
+        const text = textElement.textContent; // 복사할 텍스트 가져오기
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert('Copied: ' + text); // 복사 성공 시 알림
+            })
+            .catch((err) => {
+                console.error('Failed to copy text: ', err); // 오류 발생 시 메시지 출력
+            });
+    } else {
+        console.error('Element with id="Address" not found'); // 요소가 없을 경우
+    }
+}
           </script>         
         <div class="bitcat-container">
             <img src="data/bitcat.gif" alt="Billy Image" id="billy-image">
@@ -702,7 +705,7 @@ a:active {
 
     </style>
     <div class="line-container">
-    <h2 data-text="THE CUTEST MASCOT OF BITCOIN">THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ </h2>
+    <h2  id="more" data-text="THE CUTEST MASCOT OF BITCOIN">THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ </h2>
 </div>
 <div class="sub-area">
             <a href="https://x.com/bitcat_sol_" target="_blank"><img src="data/x.png" class="sub-text1"></a>
@@ -847,38 +850,38 @@ a:active {
     </footer>
     <div class="music-player">
         <button id="playPauseBtn" class="play-pause-button">🎧</button>
-        <audio id="audio" src="/data/bitcat.m4a"></audio>
+        <audio id="audio" src="data/bitcat.mp3"></audio>
     </div>
     <script>
-    // 스크롤 다운 버튼 기능
-    const scrollLink = document.querySelector(".scroll-down-button");
+        // Scroll down button functionality
+const scrollLink = document.querySelector(".scroll-down-button");
 
-    function scrollToContent() {
-        const moreContent = document.getElementById("more");
-        moreContent.scrollIntoView({ behavior: 'smooth' });
-    }
+function scrollToContent() {
+    const moreContent = document.getElementById("more");
+    moreContent.scrollIntoView({ behavior: "smooth" });
+}
 
-    scrollLink.addEventListener("click", function(event) {
-        event.preventDefault();
-        scrollToContent();
-    });
-
-    // 음악 재생 기능
-    const audioElement = document.getElementById('audio');
-    const playPauseButton = document.getElementById('playPauseBtn');
-
-    playPauseButton.addEventListener('click', function() {
-        if (audioElement.paused) {
-            audioElement.play().catch(error => {
-                console.error("Playback error: ", error);
-            });
-            playPauseButton.textContent = '🔇'; // Change to pause icon
-        } else {
-            audioElement.pause();
-            playPauseButton.textContent = '🎧'; // Change to play icon
-        }
-    });
+scrollLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    scrollToContent();
 });
+
+// Music player functionality
+const audioElement = document.getElementById("audio");
+const playPauseButton = document.getElementById("playPauseBtn");
+
+playPauseButton.addEventListener("click", function () {
+    if (audioElement.paused) {
+        audioElement.play().catch((error) => {
+            console.error("Playback error: ", error);
+        });
+        playPauseButton.textContent = "🔇"; // Change to pause icon
+    } else {
+        audioElement.pause();
+        playPauseButton.textContent = "🎧"; // Change to play icon
+    }
+});
+
     </script>       
 </body>
 </html>
