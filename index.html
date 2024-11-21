@@ -227,13 +227,22 @@
         }
 
         .logo {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 100%;
-            animation: glow 7s infinite alternate;
-        }
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 95%;
+    animation: pulse 1s infinite ease-in-out; /* 애니메이션 효과 */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1); /* 기본 크기 */
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2); /* 1.2배 커짐 */
+    }
+}
 
         @keyframes glow {
             0% {
@@ -246,13 +255,13 @@
 
         @media (min-width: 576px) {
             .logo {
-                max-width: 30%;
+                max-width: 55%;
             }
         }
 
         @media (min-width: 768px) {
             .logo {
-                max-width: 34%;
+                max-width: 45%;
             }
         }
 
@@ -288,7 +297,7 @@
 
         @media (min-width: 576px) {
             .bitcat-container img {
-                width: 55%;
+                width: 50%;
             }
         }
 
@@ -618,6 +627,9 @@ a:hover {
 a:active {
   color : rgb(255, 255, 255)
 }
+.highlight {
+    color: #e38f00;
+}
 
     </style>
     <!-- Open Graph meta tags -->
@@ -741,7 +753,17 @@ a:active {
             </div>
         </div>
     </div>
-
+    <div class="container">
+    <div class="buy-area">
+        <a href="https://solscan.io/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" target="_blank"><img src="data/smallcat.png" alt="Phantom Logo" class="icon"></a>
+        <div class="text">
+            <p><strong>Network : Solana</strong> / <strong>Total Supply : 
+                999,996,496 </strong> / <strong>Contract : renounced</strong> / 
+                <strong class="highlight">Fully Community-Driven Project</strong></p>
+        </div>
+        
+    </div>
+    </div>
     <div class="container">
         <div class="single-container">
             <h2>How to buy?</h2>
