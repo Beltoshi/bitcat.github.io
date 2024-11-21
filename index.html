@@ -40,6 +40,80 @@
             box-sizing: border-box;
         }
         
+        .meme-container {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.meme-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.meme-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    filter: blur(15px);
+    z-index: 0;
+}
+
+
+.meme-image.meme1::before {
+    background: url('data/meme1.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme2::before {
+    background: url('data/meme2.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme3::before {
+    background: url('data/meme3.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme4::before {
+    background: url('data/meme4.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme5::before {
+    background: url('data/meme5.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme6::before {
+    background: url('data/meme6.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme7::before {
+    background: url('data/meme7.jpg') center/cover no-repeat;
+}
+
+.meme-image.meme8::before {
+    background: url('data/meme8.jpg') center/cover no-repeat;
+}
+
+
+.meme-image img {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
         .footer-container {
             text-align: center;
             padding: 10px;
@@ -742,7 +816,7 @@ a:active {
             <a href="https://birdeye.so/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump?chain=solana" target="_blank"><img src="data/be.png" class="sub-text1"></a>
             </div>
         <div class="button-container">
-    <a href="https://jup.ag/swap/SOL-4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" class="buynow">Buy Now</a></div>
+    <a href="https://jup.ag/swap/SOL-4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" class="buynow"></i>Buy Now <i class="fa-solid fa-paw"></i></a></div>
     <div class="container">
         <div class="single-container">
             <h2>The Prosperous Cat Blesses Bitcoin</h2>
@@ -753,11 +827,11 @@ a:active {
             </div>
             <div class="text-area">
                 <p>
-    Born alongside Bitcoin, <strong>BITCAT</strong> is the mystical feline guardian of the blockchain. 
+                    <i class="fa-brands fa-bitcoin"></i> Born alongside Bitcoin, <strong>BITCAT</strong> is the mystical feline guardian of the blockchain. 
     With its 9 lives, it symbolizes Bitcoin's strength, precision, and infinite potential.<p></p>
-    <strong>BITCAT</strong> safeguards your wealth, ensuring luck and prosperity flow with every transaction. 
+    <i class="fa-solid fa-cat"></i></i> <strong>BITCAT</strong> safeguards your wealth, ensuring luck and prosperity flow with every transaction. 
     Legend says it watches over block number <strong>nine</strong>, blessing the network with abundance and security. 
-    <p></p>Join the <strong>BITCAT</strong> community and let this charming cat guide your journey to financial freedom. 
+    <p></p><i class="fa-solid fa-people-group"></i></i>Join the <strong>BITCAT</strong> community and let this charming cat guide your journey to financial freedom. 
     Embrace <strong>BITCAT</strong>, the mascot of Bitcoin!
 </p>
 
@@ -768,9 +842,9 @@ a:active {
     <div class="buy-area">
         <a href="https://solscan.io/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" target="_blank"><img src="data/smallcat.png" alt="Phantom Logo" class="icon"></a>
         <div class="text">
-            <p><strong class="highlight">$BITCAT</strong> / <strong>Network : Solana</strong> / <strong>Total Supply : 
-                999,996,496 </strong> / <strong>LP : Burnt </strong> / <strong>Contract : renounced</strong> / 
-                <strong class="highlight">Fully Community-Driven Project</strong></p>
+            <p><strong class="highlight">$BITCAT</strong> / <i class="fa-solid fa-globe"></i> <strong>Network : Solana</strong> / <i class="fa-solid fa-cat"></i> <strong>Total Supply : 
+                999,996,496 </strong> / <i class="fa-solid fa-fire"></i> <strong>LP : Burnt </strong> / <i class="fa-solid fa-circle-check"></i> <strong>Contract : renounced</strong> / 
+                <strong class="highlight">Fully Community-Driven</strong></p>
         </div>
         
     </div>
@@ -836,34 +910,36 @@ a:active {
 
     <div class="container">
         <div class="single-container">
-            <h2>Bitcat Memes</h2>
+            <h2>Bitcat memes</h2>
         </div>
+        <div class="meme-container">
         <div class="grid-2-col">
-            <div class="body-image">
-                <img src="data/meme1.jpg" alt="Body Image">
+            <div class="meme-image meme1">
+                <img src="data/meme1.jpg" alt="meme1">
             </div>
-            <div class="body-image">
-                <img src="data/meme2.jpg" alt="Body Image">
+            <div class="meme-image meme2">
+                <img src="data/meme2.jpg" alt="meme2">
             </div>
-            <div class="body-image">
-                <img src="data/meme3.jpg" alt="Body Image">
+            <div class="meme-image meme3">
+                <img src="data/meme3.jpg" alt="meme3">
             </div>
-            <div class="body-image">
-                <img src="data/meme4.jpg" alt="Body Image">
+            <div class="meme-image meme4">
+                <img src="data/meme4.jpg" alt="meme4">
             </div>
-            <div class="body-image">
-                <img src="data/meme5.jpg" alt="Body Image">
+            <div class="meme-image meme5">
+                <img src="data/meme5.jpg" alt="meme5">
             </div>
-            <div class="body-image">
-                <img src="data/meme6.jpg" alt="Body Image">
+            <div class="meme-image meme6">
+                <img src="data/meme6.jpg" alt="meme6">
             </div>
-            <div class="body-image">
-                <img src="data/meme7.jpg" alt="Body Image">
+            <div class="meme-image meme7">
+                <img src="data/meme7.jpg" alt="meme7">
             </div>
-            <div class="body-image">
-                <img src="data/meme8.jpg" alt="Body Image">
+            <div class="meme-image meme8">
+                <img src="data/meme8.jpg" alt="meme8">
             </div>
         </div>
+    </div>
     </div>
     <footer>
         <div class="sub-area">
