@@ -222,6 +222,29 @@
   display: block;
 }
 
+.game {
+    top: 380px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #ffffff !important;
+    border: 2px solid rgb(255, 255, 255); /* Set a proper border */
+    background: linear-gradient(45deg, rgb(243, 89, 0), rgb(255, 136, 0)); /* 그라데이션 */
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px 20px; /* Add padding for better button shape */
+    border-radius: 40px; /* Makes the button rounded */
+    text-align: center;
+    margin: 5px auto;
+    position: relative; /* Required for hover effect */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.game:hover {
+    background: rgb(255, 255, 255);
+    color: #ff9100;
+    animation: shake 0.3s infinite; /* Adds the shaking animation */
+}
+
         .single-container h2, .single-container p {
             margin: 0;
             word-break: break-word;
@@ -248,6 +271,12 @@
 
         
         .buttons-grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0px;
+        }
+
+        .buynow-grid-2-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0px;
@@ -770,6 +799,8 @@ a:active {
     }
 }
           </script>         
+          <div class="button-container">
+            <a href="game" class="game"></i><i class="fas fa-gamepad"></i> Play Game (beta) </a></div> 
         <div class="bitcat-container">
             <img src="data/bitcat.gif" alt="bitcat Image" id="bitcat-image">
         </div>
@@ -828,6 +859,7 @@ a:active {
         <div class="button-container">
     <a href="https://jup.ag/swap/SOL-4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" class="buynow"></i>Buy Now <i class="fa-solid fa-paw"></i></a></div>
     <div class="container">
+            <div class="container">
         <div class="single-container">
             <h2></h2>
         </div>
