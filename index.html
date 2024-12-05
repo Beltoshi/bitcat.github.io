@@ -275,12 +275,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 0px;
         }
-
-        .buynow-grid-2-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0px;
-        }
         
         @media (max-width: 768px) {
             .buttons-grid-2-col {
@@ -630,7 +624,7 @@
     color: #ffffff;
     text-decoration: none;
     cursor: pointer;
-    padding: 5px 20px; /* Add padding for better button shape */
+    padding: 5px 30px; /* Add padding for better button shape */
     border-radius: 30px; /* Makes the button rounded */
     text-align: center;
     margin: 5px auto;
@@ -655,9 +649,21 @@
 /* To center the button on the page */
 .button-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically if needed */
-    margin : 0;
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    justify-content: center; /* 중앙 정렬 */
+    gap: 0; /* 버튼 간 간격 추가 */
+    margin: 0;
+}
+
+.button-container button {
+    flex: 0 1 calc(50% - 10px); /* 2열 기준 버튼 크기 (간격 포함) */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+@media (max-width: 600px) {
+    .button-container button {
+        flex: 0 1 100%; /* 1열로 버튼 크기 조정 */
+    }
 }
 
 
@@ -864,7 +870,7 @@ a:active {
             <h2></h2>
         </div>
         <div class="single-container">
-            <h2>Bitcoin Mascot</h2>
+            <h2>The AI-generated cat mascot by Bitcoin</h2>
         </div>
         <div class="grid-2-col">
             <div class="body-image">
@@ -899,7 +905,10 @@ a:active {
         
     </div>
     <div class="button-container">
-        <a href="data/BitCat_Whitepaper.pdf" class="buynow"></i>Whitepaper <i class="fa-solid fa-paw"></i></a></div>
+        <a href="data/BitCat_Whitepaper.pdf"  class="buynow"></i><i class="fa-solid fa-file-pdf"></i> Whitepaper (EN)
+        <a href="data/BitCat_Whitepaper_cn.pdf" class="buynow"></i><i class="fa-solid fa-file-pdf"></i> Whitepaper (中文)</a>
+    </div>
+        
         <div class="container">
     </div>
     <div class="single-container">
