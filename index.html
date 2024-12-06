@@ -1190,14 +1190,14 @@ const updateProgress = (id, progress) => {
     }
 }
 
-const BITCAT_TOTAL = 10 * 100 * 1000 // 10M
+const BITCAT_TOTAL = 10 * 1000 * 1000 // 10M
 const calcBITCAT = (amount) => {
-    return (amount / BITCAT_TOTAL).toFixed(2)
+    return (amount / BITCAT_TOTAL * 100).toFixed(2)
 }
 
 const USDC_SOL_TOTAL = 3.6 * 10 * 1000 // 3.6w$
 const calcUSDCAndSOL = (value) => {
-    return (value / USDC_SOL_TOTAL).toFixed(2)
+    return (value / USDC_SOL_TOTAL * 100).toFixed(2)
 }
 
 // request donate data
