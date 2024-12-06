@@ -48,7 +48,7 @@
             font-size: 0.9em;
             box-sizing: border-box;
         }
-        
+
         .meme-container {
     text-align: center;
     padding: 30px;
@@ -133,7 +133,7 @@
         .line-container {
     text-align: center;
     background: rgb(255, 255, 255);
-    padding: 0px 0; 
+    padding: 0px 0;
     margin-top: -25px;
     position: relative;
     top: 0;
@@ -167,10 +167,10 @@
             display: flex;
             position: fixed;
             top: 310px;
-            margin: 0 auto; 
+            margin: 0 auto;
             border-radius: 100px;
             align-items: center;
-            justify-content: center; 
+            justify-content: center;
             padding: 10px 20px;
             background-color: #ffffff;
             color: rgb(49, 49, 49);
@@ -269,13 +269,13 @@
             gap: 20px;
         }
 
-        
+
         .buttons-grid-2-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0px;
         }
-        
+
         @media (max-width: 768px) {
             .buttons-grid-2-col {
                 grid-template-columns: 1fr;
@@ -380,7 +380,7 @@
                 max-width: 40%;
             }
         }
-        
+
         @media (min-width: 1280px) {
             .logo {
                 max-width: 35%;
@@ -490,10 +490,10 @@
             color: white;
             font-size: 1.3em;
             z-index: 2;
-            animation: blink 2s infinite; 
-            text-shadow: 
-                0 0 5px rgba(0, 0, 0, 0.2), 
-                0 0 5px rgba(0, 0, 0, 0.3), 
+            animation: blink 2s infinite;
+            text-shadow:
+                0 0 5px rgba(0, 0, 0, 0.2),
+                0 0 5px rgba(0, 0, 0, 0.3),
                 0 0 10px rgba(0, 0, 0, 0.4),
                 0 0 15px rgba(0, 0, 0, 0.6);
         }
@@ -761,6 +761,73 @@ a:active {
     color: #e38f00;
 }
 
+
+
+
+.copy-button.reverse {
+    background-color: #e38f00;
+    color: #ffffff;
+}
+
+.relative {
+    position: relative!important;
+}
+.inset-0 {
+    inset: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.ml-2 {
+    margin-left: 1.25rem!important;
+}
+
+.mb-1em {
+    margin-bottom: 1em!important;
+}
+.text-2xl {
+    font-size: 26px;
+}
+.text-base {
+    font-size: 16px;
+}
+.text-sm {
+    font-size: 14px!important;
+}
+.mt-1em {
+    margin-top: 1em;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.fcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #222222;
+    padding: 4px;
+    border-radius: 999px;
+}
+.progress-inner {
+    min-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236,45,47);
+    color: #ffffff;
+    border-radius: 999px;
+    height: 38px;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0, 0.25);
+}
     </style>
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="BITCAT - Designed by Bitcoin">
@@ -787,10 +854,10 @@ a:active {
         <button class="copy-button" onclick="copyToClipboard()">
             <i class="fas fa-copy"></i> <!-- 복사 아이콘 -->
             <span class="button-text" id="Address">4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump</span> <!-- 복사할 텍스트 -->
-        </button>             
+        </button>
           <script>
-        function copyToClipboard() {
-    const textElement = document.getElementById('Address');
+        function copyToClipboard(selector) {
+    const textElement = document.getElementById(selector || 'Address');
     if (textElement) {
         const text = textElement.textContent; // 복사할 텍스트 가져오기
         navigator.clipboard.writeText(text)
@@ -804,18 +871,18 @@ a:active {
         console.error('Element with id="Address" not found'); // 요소가 없을 경우
     }
 }
-          </script>         
+          </script>
           <div class="button-container">
-            <a href="game" class="game"></i><i class="fas fa-gamepad"></i> Play Game (beta) </a></div> 
+            <a href="game" class="game"></i><i class="fas fa-gamepad"></i> Play Game (beta) </a></div>
         <div class="bitcat-container">
             <img src="data/bitcat.gif" alt="bitcat Image" id="bitcat-image">
         </div>
     </header>
     <br>
 
-  
-        
-    
+
+
+
     <style>
 
 .image-container {
@@ -834,7 +901,7 @@ a:active {
        @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
        .sour-gummy-fonts {
             font-family: "Sour Gummy", sans-serif;
-            font-optical-sizing: auto; 
+            font-optical-sizing: auto;
             font-weight: 100;          /* 글꼴 굵기 */
             font-style: normal;        /* 기울임체 여부 */
             font-variation-settings: "wdth" 500; /* 너비 조정 */
@@ -870,6 +937,48 @@ a:active {
             <h2></h2>
         </div>
         <div class="single-container">
+            <h2>Crowd funding Goal</h2>
+        </div>
+        <div class="text-area">
+            <p class="highlight text-center text-2xl">
+                Fund Allocation
+            </p>
+            <p class="text-base">
+                The BITCAT CTO team seeks to raise funds to contract a professional firm for Liquidity Provision Services, ensuring stable liquidity and increased trading volume.
+            </p>
+            <p>
+                <strong>1. 10M $BITCAT</strong>
+                <span> (1% of supply)</span>
+            </p>
+            <div class="text-sm mt-1em">
+                <div class="progress-container">
+                    <div id="progress-bitcat" class="progress-inner text-sm"></div>
+                </div>
+            </div>
+            <p>
+                <strong>2. $36,000 $SOL / $USDC </strong>
+                (LP service fee)
+            </p>
+            <div class="text-sm mt-1em">
+                <div class="progress-container">
+                    <div id="progress-sol-usdc" class="progress-inner text-sm"></div>
+                </div>
+            </div>
+            <p class="text-center text-2xl text-center highlight">
+                🔏Multi-sig (3/5, Solana):
+            </p>
+            <div class="fcc">
+                <button class="copy-button reverse relative inset-0 m-0 mb-1em mt-1em" onclick="copyToClipboard('donateAddress')">
+                    <i class="fas fa-copy"></i> <!-- 복사 아이콘 -->
+                    <span class="button-text" id="donateAddress">2iayT6ppVjZczeYPVWSf6HVJTQJNKNainawRiri4xGXC</span> <!-- 복사할 텍스트 -->
+                </button>
+            </div>
+            <p class="text-base text-center">Please donate to this address for crowdfunding.</p>
+            <p class="text-base text-center">
+                With small contributions, our 20K-strong community can achieve this goal together!
+            </p>
+        </div>
+        <div class="single-container">
             <h2>The AI-generated cat mascot by Bitcoin</h2>
         </div>
         <div class="grid-2-col">
@@ -878,11 +987,11 @@ a:active {
             </div>
             <div class="text-area">
                 <p>
-                    <i class="fa-brands fa-bitcoin"></i> Born alongside Bitcoin, <strong>$BITCAT</strong> is the mystical feline guardian of the blockchain. 
+                    <i class="fa-brands fa-bitcoin"></i> Born alongside Bitcoin, <strong>$BITCAT</strong> is the mystical feline guardian of the blockchain.
     With its 9 lives, it symbolizes Bitcoin's strength, precision, and infinite potential.<p></p>
-    <i class="fa-solid fa-cat"></i></i> <strong>$BITCAT</strong> safeguards your wealth, ensuring luck and prosperity flow with every transaction. 
-    Legend says it watches over block number <strong>nine</strong>, blessing the network with abundance and security. 
-    <p></p><i class="fa-solid fa-users"></i> Join the <strong>$BITCAT</strong> community and let this charming cat guide your journey to financial freedom. 
+    <i class="fa-solid fa-cat"></i></i> <strong>$BITCAT</strong> safeguards your wealth, ensuring luck and prosperity flow with every transaction.
+    Legend says it watches over block number <strong>nine</strong>, blessing the network with abundance and security.
+    <p></p><i class="fa-solid fa-users"></i> Join the <strong>$BITCAT</strong> community and let this charming cat guide your journey to financial freedom.
     Embrace <strong>$BITCAT</strong>, the mascot of Bitcoin!
 </p>
 
@@ -898,17 +1007,17 @@ a:active {
     <div class="buy-area">
         <a href="https://solscan.io/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" target="_blank"><img src="data/smallcat.png" alt="Phantom Logo" class="icon"></a>
         <div class="text">
-            <p><strong class="highlight">$BITCAT</strong> / <i class="fa-solid fa-globe"></i> <strong>Network : Solana</strong> / <i class="fa-solid fa-cat"></i> <strong>Total Supply : 
-                1,000,000,000 </strong> / <i class="fa-solid fa-fire"></i> <strong>LP : Burnt </strong> / <i class="fa-solid fa-circle-check"></i> <strong>Contract : renounced</strong> / 
+            <p><strong class="highlight">$BITCAT</strong> / <i class="fa-solid fa-globe"></i> <strong>Network : Solana</strong> / <i class="fa-solid fa-cat"></i> <strong>Total Supply :
+                1,000,000,000 </strong> / <i class="fa-solid fa-fire"></i> <strong>LP : Burnt </strong> / <i class="fa-solid fa-circle-check"></i> <strong>Contract : renounced</strong> /
                 <strong class="highlight">Fully Community-Driven</strong></p>
         </div>
-        
+
     </div>
     <div class="button-container">
         <a href="data/BitCat_Whitepaper.pdf"  class="buynow"></i><i class="fa-solid fa-file-pdf"></i> Whitepaper (EN)
         <a href="data/BitCat_Whitepaper_CN.pdf" class="buynow"></i><i class="fa-solid fa-file-pdf"></i> Whitepaper (中文)</a>
     </div>
-        
+
         <div class="container">
     </div>
     <div class="single-container">
@@ -969,7 +1078,7 @@ a:active {
                 </div>
                 </div>
         </div>
-        
+
     </div>
 
 
@@ -1057,6 +1166,80 @@ playPauseButton.addEventListener("click", function () {
     }
 });
 
-    </script>       
+/*
+* update donate progress
+* BITCAT_TOTAL  Total amount of BITCAT（unit: 1amount）
+* USDC_SOL_TOTAL Total value of USDC and SOL (unit: 1$)
+* */
+const updateProgress = (id, progress) => {
+    const el = document.getElementById(id)
+    if (el) {
+        el.style.width = `${progress}%`
+        el.innerText = `${progress}%`
+    }
+}
+
+const BITCAT_TOTAL = 10 * 100 * 1000 // 10M
+const calcBITCAT = (amount) => {
+    return (amount / BITCAT_TOTAL).toFixed(2)
+}
+
+const USDC_SOL_TOTAL = 3.6 * 10 * 1000 // 3.6w$
+const calcUSDCAndSOL = (value) => {
+    return (value / USDC_SOL_TOTAL).toFixed(2)
+}
+
+// request donate data
+const getDonateData = () => {
+    return fetch('https://v4-api.squads.so/balancesDAS/2iayT6ppVjZczeYPVWSf6HVJTQJNKNainawRiri4xGXC?sendAll=true&cacheBypass=false&useProd=true')
+        .then(res => res.json())
+        .then((json) => {
+            return json.balances.reduce((ret, cur) => {
+                ret[cur.symbol] = cur
+                return ret
+            }, {})
+        })
+}
+
+// cycle fn, default 1s
+const loop = (fn, delay = 1000) => {
+    let timer = setTimeout(async () => {
+       await fn()
+       clearTimeout(timer)
+       timer = null
+       loop(fn, delay)
+    }, delay)
+}
+
+// storing recorded progress
+const localeData = (bitcat_progress, usdc_sol_progress) => {
+    localStorage.setItem('progress-bitcat', bitcat_progress)
+    localStorage.setItem('progress-sol-usdc', usdc_sol_progress)
+}
+
+// Restoring recorded progress
+const relocaleData = () => {
+    updateProgress('progress-bitcat', localStorage.getItem('progress-bitcat'))
+    updateProgress('progress-sol-usdc', localStorage.getItem('progress-sol-usdc'))
+}
+
+
+relocaleData()
+
+
+loop(() => {
+    return getDonateData().then((data) => {
+        const bitcat_progress = calcBITCAT(data['BITCAT'].uiAmount)
+        updateProgress('progress-bitcat', bitcat_progress)
+
+        const usdc_sol_value = data['USDC'].uiPrice + data['SOL'].uiPrice
+        const usdc_sol_progress = calcUSDCAndSOL(usdc_sol_value)
+        updateProgress('progress-sol-usdc', usdc_sol_progress)
+
+        localeData(bitcat_progress, usdc_sol_progress)
+    })
+})
+
+    </script>
 </body>
 </html>
