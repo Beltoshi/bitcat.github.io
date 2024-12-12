@@ -815,6 +815,9 @@ a:active {
     justify-content: center;
     align-items: center;
 }
+.gap-10 {
+    gap: 10px;
+}
 
 .progress-container {
     width: 100%;
@@ -832,6 +835,13 @@ a:active {
     border-radius: 999px;
     height: 40px;
     box-shadow: 4px 4px 4px 4px rgba(0,0,0, 0.25);
+}
+
+.tag-treasury {
+    background-color: rgb(255, 136, 0);
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 999px;
 }
     </style>
     <!-- Open Graph meta tags -->
@@ -956,8 +966,15 @@ a:active {
                     Funding Target
                 </p>
                 <p class="text-base text-center">
-                <strong>10,000,000</strong> $BITCAT
-                <span> (1% of supply)</span>
+                <strong>$30K worth of $BITCAT</strong>
+            </p>
+            <p class="fcc gap-10 text-sm">
+                <span class="tag-treasury">TREASURY</span>
+                <span>
+                    <span id="amount-bitcat"></span>
+                    <span>BITCAT =</span>
+                    <span id="dollar-bitcat"></span>
+                </span>
             </p>
             <div class="text-sm mt-1em">
                 <div class="progress-container">
@@ -966,8 +983,17 @@ a:active {
             </div>
             <p>
                 <p class="text-base text-center">
-                <strong>$36,000 </strong> $SOL or $USDC
-                (LP service fee)
+                <strong>$30K USDC + SOL</strong>
+            </p>
+            <p class="fcc gap-10 text-sm">
+                <span class="tag-treasury">TREASURY</span>
+                <span>
+                    <span id="amount-usdc"></span>
+                    <span>USDC +</span>
+                    <span id="amount-sol"></span>
+                    <span>SOL =</span>
+                    <span id="dollar-sol-usdc"></span>
+                </span>
             </p>
             <div class="text-sm mt-1em">
                 <div class="progress-container">
@@ -1195,7 +1221,7 @@ const calcBITCAT = (amount) => {
     return (amount / BITCAT_TOTAL * 100).toFixed(2)
 }
 
-const USDC_SOL_TOTAL = 3.6 * 10 * 1000 // 3.6w$
+const USDC_SOL_TOTAL = 3.0 * 10 * 1000 // 3.6w$
 const calcUSDCAndSOL = (value) => {
     return (value / USDC_SOL_TOTAL * 100).toFixed(2)
 }
@@ -1234,18 +1260,44 @@ const relocaleData = () => {
     updateProgress('progress-sol-usdc', localStorage.getItem('progress-sol-usdc'))
 }
 
+const fillText = (id, text) => {
+    const el = document.getElementById(id)
+    el.innerText = text
+
+    localStorage.setItem(id, text)
+}
+
+const relocaleFillText = () => {
+    const ids = ['amount-bitcat', 'dollar-bitcat', 'amount-usdc', 'amount-sol', 'dollar-sol-usdc']
+
+    ids.forEach((id) => {
+        const el = document.getElementById(id)
+
+        el.innerText = localStorage.getItem(id)
+    })
+}
+
 
 relocaleData()
+
+relocaleFillText()
 
 
 loop(() => {
     return getDonateData().then((data) => {
         const bitcat_progress = calcBITCAT(data['BITCAT'].uiAmount)
         updateProgress('progress-bitcat', bitcat_progress)
+        fillText('amount-bitcat', '$' + data['BITCAT'].uiAmount.toFixed(2))
+        fillText('dollar-bitcat', '$' + data['BITCAT'].uiPrice.toFixed(2))
 
         const usdc_sol_value = data['USDC'].uiPrice + data['SOL'].uiPrice
+        const usdc_sol_amount = data['SOL'].uiAmount
+        const usdc_usdc_amount = data['USDC'].uiAmount
         const usdc_sol_progress = calcUSDCAndSOL(usdc_sol_value)
         updateProgress('progress-sol-usdc', usdc_sol_progress)
+        fillText('amount-usdc', usdc_usdc_amount.toFixed(2))
+        fillText('amount-sol', usdc_sol_amount.toFixed(2))
+        fillText('dollar-sol-usdc', '$' + usdc_sol_value.toFixed(2))
 
         localeData(bitcat_progress, usdc_sol_progress)
     })
