@@ -947,17 +947,6 @@ a:active {
         <div class="button-container">
     <a href="https://jup.ag/swap/SOL-4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" class="buynow"></i>Buy Now <i class="fa-solid fa-paw"></i></a></div>
     <div class="container">
-            <div class="container">
-        <div class="single-container">
-            <h2>BitCat Price Information</h2>
-        </div>
-        <div class="text-area" style="display: flex;flex-direction: column;">
-            <div>
-                <span>BitCat Price: $</span> 
-                <span id="bitcat-price-usdt"></span>
-            </div>
-            <div>BitCat Amount: 1B</div>
-        </div>
         <div class="single-container">
             <h2>Crowd funding</h2>
         </div>
@@ -1022,6 +1011,18 @@ a:active {
 <br>With small contributions, <br>our 20K-strong community can achieve this goal together!
             </p>
         </div>
+
+        <div class="single-container">
+            <h2>BitCat Price Information</h2>
+        </div>
+        <div class="text-area" style="display: flex;flex-direction: column;">
+            <div>
+                <span>BitCat Price: $</span> 
+                <span id="bitcat-price-usdt"></span>
+            </div>
+            <!-- <div>BitCat Amount: 1B</div> -->
+        </div>
+
         <div class="single-container">
             <h2>The AI-generated cat mascot by Bitcoin</h2>
         </div>
@@ -1041,9 +1042,7 @@ a:active {
 
             </div>
         </div>
-        <div class="single-container">
-            <h2></h2>
-        </div>
+
         <div class="single-container">
             <h2>Bitcatnomics</h2>
         </div>
@@ -1297,6 +1296,8 @@ loop(() => {
         fillText('amount-bitcat', data['BITCAT'].uiAmount.toFixed(2))
         fillText('dollar-bitcat', '$' + data['BITCAT'].uiPrice.toFixed(2))
         fillText('bitcat-price-usdt', data['BITCAT'].pricePerUnit )
+        upDateBitCatPriceNumber()
+
 
         const usdc_sol_value = data['USDC'].uiPrice + data['SOL'].uiPrice
         const usdc_sol_amount = data['SOL'].uiAmount
@@ -1311,6 +1312,27 @@ loop(() => {
     })
 })
 
+    </script>
+
+
+    <script>
+        const upDateBitCatPriceNumber = () => {
+            const bitcatPriceInfo = document.getElementById('bitcat-price-usdt')
+            const finalPrice = parseFloat(bitcatPriceInfo.innerText)
+            bitcatPriceInfo.innerText = '0';
+            const updateNumber = () => {
+                const d = parseFloat(bitcatPriceInfo.innerText)
+                const increment = (finalPrice - d) / 3
+                if (d < finalPrice) {
+                    bitcatPriceInfo.innerText = (d+increment).toFixed(6)
+                    setTimeout(updateNumber, 100)
+                } else {
+                    bitcatPriceInfo.innerText = finalPrice
+                }
+            }
+            updateNumber()
+        }
+        
     </script>
 </body>
 </html>
