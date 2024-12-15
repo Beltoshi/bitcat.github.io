@@ -949,7 +949,14 @@ a:active {
     <div class="container">
             <div class="container">
         <div class="single-container">
-            <h2></h2>
+            <h2>BitCat Price Information</h2>
+        </div>
+        <div class="text-area" style="display: flex;flex-direction: column;">
+            <div>
+                <span>BitCat Price: $</span> 
+                <span id="bitcat-price-usdt"></span>
+            </div>
+            <div>BitCat Amount: 1B</div>
         </div>
         <div class="single-container">
             <h2>Crowd funding</h2>
@@ -1170,7 +1177,7 @@ a:active {
     </div>
     </footer>
     <div class="music-player">
-        <button id="playPauseBtn" class="play-pause-button">🎧</button>
+        <button id="playPauseBtn" class="play-pause-button">🔇</button>
         <audio id="audio" src="data/bitcat.mp3"></audio>
     </div>
     <script>
@@ -1196,10 +1203,10 @@ playPauseButton.addEventListener("click", function () {
         audioElement.play().catch((error) => {
             console.error("Playback error: ", error);
         });
-        playPauseButton.textContent = "🔇"; // Change to pause icon
+        playPauseButton.textContent = "🎧"; // Change to pause icon
     } else {
         audioElement.pause();
-        playPauseButton.textContent = "🎧"; // Change to play icon
+        playPauseButton.textContent = "🔇"; // Change to play icon
     }
 });
 
@@ -1238,8 +1245,8 @@ const getDonateData = () => {
         })
 }
 
-// cycle fn, default 1s
-const loop = (fn, delay = 1000) => {
+// cycle fn, default 3s
+const loop = (fn, delay = 3000) => {
     let timer = setTimeout(async () => {
        await fn()
        clearTimeout(timer)
@@ -1289,6 +1296,7 @@ loop(() => {
         updateProgress('progress-bitcat', bitcat_progress)
         fillText('amount-bitcat', data['BITCAT'].uiAmount.toFixed(2))
         fillText('dollar-bitcat', '$' + data['BITCAT'].uiPrice.toFixed(2))
+        fillText('bitcat-price-usdt', data['BITCAT'].pricePerUnit )
 
         const usdc_sol_value = data['USDC'].uiPrice + data['SOL'].uiPrice
         const usdc_sol_amount = data['SOL'].uiAmount
