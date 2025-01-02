@@ -187,6 +187,7 @@
             text-overflow: ellipsis;  /* 넘치는 텍스트를 ... 으로 처리 */
             text-align: center; /* 텍스트를 중앙 정렬 */
             font-family: 'Sour Gummy', sans-serif;
+            z-index: 10000;
         }
 
 .copy-button:hover {
@@ -237,6 +238,7 @@
     margin: 5px auto;
     position: relative; /* Required for hover effect */
     transition: transform 0.3s ease; /* Smooth transition for hover effects */
+    z-index: 10000;
 }
 
 .game:hover {
@@ -888,7 +890,8 @@ a:active {
 }
           </script>
           <div class="button-container">
-            <a href="game" class="game"></i><i class="fas fa-gamepad"></i> BITCAT Game Universe (beta) </a></div>
+            <a href="universe" class="game"></i><i class="fas fa-gamepad"></i> BITCAT Game Universe</a></div>
+            <a href="universe/#/doa" class="game" style="top: 340px;"></i><i class="fas fa-vote-yea"></i> BITCAT DAO Voting</a></div>
         <div class="bitcat-container">
             <img src="data/bitcat.gif" alt="bitcat Image" id="bitcat-image">
         </div>
