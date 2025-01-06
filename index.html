@@ -904,8 +904,63 @@ a:active {
     <style>
 
 .image-container {
+    width: 100%;
     position: relative; /* 상대 위치 설정 */
     display: inline-block; /* 인라인 블록으로 설정 */
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    z-index: 10000;
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    bottom: 220px;  /* 이미지 아래쪽에 위치 */
+    left: 50%;     /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬 */
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3000; /* 버튼을 이미지 위로 표시 */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+#caption {
+    color: #ccc;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
 }
 
 .frame {
@@ -1058,18 +1113,46 @@ a:active {
                 <blockquote class="twitter-tweet"><p lang="qme" dir="ltr"><a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#Bitcoin</a> <a href="https://t.co/Z3OSPyFbC9">pic.twitter.com/Z3OSPyFbC9</a></p>&mdash; Bitcoin (@Bitcoin) <a href="https://twitter.com/Bitcoin/status/1857419117025808830?ref_src=twsrc%5Etfw">November 15, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="text-area">
-                <p><strong>The AI-generated cat mascot by Bitcoin</strong></p>
-                <p><i class="fa-brands fa-bitcoin"></i> Born alongside Bitcoin, <strong>$BITCAT</strong> is the mystical feline guardian of the blockchain.
-    With its 9 lives, it symbolizes Bitcoin's strength, precision, and infinite potential.<p></p>
-    <i class="fa-solid fa-cat"></i></i> <strong>$BITCAT</strong> safeguards your wealth, ensuring luck and prosperity flow with every transaction.
-    Legend says it watches over block number <strong>nine</strong>, blessing the network with abundance and security.
-    <p></p><i class="fa-solid fa-users"></i> Join the <strong>$BITCAT</strong> community and let this charming cat guide your journey to financial freedom.
-    Embrace <strong>$BITCAT</strong>, the mascot of Bitcoin!
-</p>
-
+                <p><i class="fa-brands fa-bitcoin"></i> Bitcat was created 7 seconds after Bitcoin posted the AI-generated cat mascot on X at 13:43:21 UTC on Nov 15, 2024.</p>
+                    <img src="data/7sec.png" alt="The Origin of Bicat" class="responsive-image" onclick="openModal(this)">
+                    <p><i class="fa-brands fa-bitcoin"></i> Bitcat is Bitcoin’s mascot and a symbol of luck, growing in a community-driven way.</p>
+                    <div class="image-container">
+                </div>
+                <!-- Modal -->
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="modalImage">
+                    <div id="caption"></div>
+                </div>
             </div>
         </div>
 
+        <script>
+            function openModal(img) {
+                var modal = document.getElementById("imageModal");
+                var modalImg = document.getElementById("modalImage");
+                var caption = document.getElementById("caption");
+                
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                caption.innerHTML = img.alt;
+            }
+            
+            function closeModal(event) {
+                // 클릭된 부분이 modal 자체일 때 모달을 닫음
+                if (event.target === event.currentTarget || event.target.classList.contains('close')) {
+                    var modal = document.getElementById("imageModal");
+                    modal.style.display = "none";
+                }
+            }
+            
+            // .close 버튼에 클릭 이벤트 리스너 추가
+            document.querySelector('.close').addEventListener('click', closeModal);
+            
+            // 배경 클릭 시 모달을 닫을 수 있도록 배경에 이벤트 리스너 추가
+            document.getElementById('imageModal').addEventListener('click', closeModal);
+            </script>
+            
         <div class="single-container">
             <h2>BITCATNOMICS</h2>
         </div>
