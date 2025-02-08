@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V51KMR1JM9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V51KMR1JM9');
+</script>
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+<link rel="shortcut icon" href="./favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Bitcat" />
+<link rel="manifest" href="/site.webmanifest" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>BITCAT - Bitcoin's Mascot</title>
+        <!-- Google tag (gtag.js) -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8FFM3J0J81');
+        </script>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+}
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .single-container {
+            text-align: center;
+            padding: 20px;
+            padding: 30px;
+            font-size: 0.9em;
+            box-sizing: border-box;
+        }
+
+        .meme-container {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.meme-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.meme-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    filter: blur(15px);
+    z-index: 0;
+}
+
+
+.meme-image.meme1::before {
+    background: url('data/meme1.webp') center/cover no-repeat;
+}
+
+.meme-image.meme2::before {
+    background: url('data/meme2.webp') center/cover no-repeat;
+}
+
+.meme-image.meme3::before {
+    background: url('data/meme3.webp') center/cover no-repeat;
+}
+
+.meme-image.meme4::before {
+    background: url('data/meme4.webp') center/cover no-repeat;
+}
+
+.meme-image.meme5::before {
+    background: url('data/meme5.webp') center/cover no-repeat;
+}
+
+.meme-image.meme6::before {
+    background: url('data/meme6.webp') center/cover no-repeat;
+}
+
+.meme-image.meme7::before {
+    background: url('data/meme7.webp') center/cover no-repeat;
+}
+
+.meme-image.meme8::before {
+    background: url('data/meme8.webp') center/cover no-repeat;
+}
+
+.meme-image.meme9::before {
+    background: url('data/meme9.webp') center/cover no-repeat;
+}
+
+
+.meme-image img {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+        .footer-container {
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            font-size: 1.3em;
+        }
+
+        .line-container {
+    text-align: center;
+    background: rgb(255, 255, 255);
+    padding: 0px 0;
+    margin-top: -25px;
+    position: relative;
+    top: 0;
+    overflow: hidden; /* 컨테이너의 범위를 넘는 부분 숨김 */
+}
+
+.line-container h2 {
+    margin: 5px;
+    display: inline-block;
+    font-size: 2em;
+    color: #f8aa00;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    animation: scrollLeft 120s linear infinite; /* 텍스트가 왼쪽으로 반복 이동 */
+}
+.line-container h2::after {
+    content: attr(data-text); /* 기존 텍스트와 동일한 내용을 반복 */
+    display: inline-block;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0%); /* 화면 오른쪽 끝에서 시작 */
+    }
+    100% {
+        transform: translateX(-100%); /* 화면 왼쪽 끝으로 이동 */
+    }
+}
+        .copy-button {
+            display: flex;
+            position: fixed;
+            top: 310px;
+            margin: 0 auto;
+            border-radius: 100px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: rgb(49, 49, 49);
+            font-size: 17px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+            position: relative;
+            animation: glow 7s infinite alternate;
+            max-width: 520px; /* max-width를 300%에서 300px로 수정 */
+            width: 90%; /* 100% 너비로 설정 */
+            white-space: nowrap;  /* 텍스트가 줄 바꿈 되지 않도록 */
+            overflow: hidden;  /* 텍스트가 넘치면 숨기기 */
+            text-overflow: ellipsis;  /* 넘치는 텍스트를 ... 으로 처리 */
+            text-align: center; /* 텍스트를 중앙 정렬 */
+            font-family: 'Sour Gummy', sans-serif;
+            z-index: 10000;
+        }
+
+.copy-button:hover {
+  background-color: #303030;
+  Color: #e38f00;
+}
+
+.copy-button .button-text {
+  margin-left: 10px;
+  white-space: nowrap;  /* 텍스트가 한 줄로 유지되도록 */
+  overflow: hidden;  /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis;  /* 넘치는 부분을 ...으로 표시 */
+  max-width: calc(100% - 30px);  /* 아이콘 크기만큼 텍스트 공간을 차지하도록 */
+}
+
+.copy-button:focus {
+  outline: none;
+}
+
+.copy-button .success-message {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: none;
+}
+
+.copy-button.copied .success-message {
+  display: block;
+}
+
+.game {
+    top: 324px;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #ffffff !important;
+    border: 2px solid rgb(255, 255, 255); /* Set a proper border */
+    background: linear-gradient(45deg, rgb(243, 89, 0), rgb(255, 136, 0)); /* 그라데이션 */
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px 20px; /* Add padding for better button shape */
+    border-radius: 40px; /* Makes the button rounded */
+    text-align: center;
+    margin: 5px auto;
+    position: relative; /* Required for hover effect */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+    z-index: 10000;
+}
+
+.game:hover {
+    background: rgb(56, 56, 56);
+    color: #ff9100 !important;
+    animation: shake 0.3s infinite; /* Adds the shaking animation */
+}
+
+        .single-container h2, .single-container p {
+            margin: 0;
+            word-break: break-word;
+            font-size: 2.7em;
+            color:#222222;
+            animation: glow 7s infinite alternate;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 0px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+
+        .buttons-grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0px;
+        }
+
+        @media (max-width: 768px) {
+            .buttons-grid-2-col {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+        .grid-2-col .body-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2-col {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            text-align: center;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-title {
+            position: absolute;
+            top: 220px;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffffff;
+            z-index: 1;
+            text-shadow: 0px 3px 4px rgb(0, 0, 0);
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                right: 50%;
+                left: 50%;
+                font-size: 2em;
+                transform: translateX(-50%);
+            }
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        .logo {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    animation: pulse 3s infinite ease-in-out; /* 애니메이션 효과 */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1); /* 기본 크기 */
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1); /* 1.2배 커짐 */
+    }
+}
+
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 2px rgb(255, 255, 222));
+            }
+            60% {
+                filter: drop-shadow(0 0 6px rgb(255, 255, 195));
+            }
+        }
+
+        @media (min-width: 576px) {
+            .logo {
+                max-width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                max-width: 45%;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .logo {
+                max-width: 40%;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .logo {
+                max-width: 35%;
+            }
+        }
+
+        .bitcat-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .bitcat-container img {
+            width: 85%;
+            height: auto;
+            margin-bottom: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @media (min-width: 376px) {
+            .bitcat-container img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .bitcat-container img {
+                width: 80%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .bitcat-container img {
+                width: 70%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .bitcat-container img {
+                width: 48%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .bitcat-container img {
+                width: 43%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .bitcat-container img {
+                width: 40%;
+            }
+        }
+
+        .music-player {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.play-pause-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.play-pause-button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .music-player {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+        .scroll-down-button:hover {
+            color: #ffd478;
+        }
+        .scroll-down-button {
+            position: absolute;
+            top: 70%;
+            left: 70%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0px;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 1.3em;
+            z-index: 2;
+            animation: blink 2s infinite;
+            text-shadow:
+                0 0 5px rgba(0, 0, 0, 0.2),
+                0 0 5px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(0, 0, 0, 0.6);
+        }
+           @keyframes blink {
+            0% {
+            opacity: 1;
+            }
+            50% {
+            opacity: 0.1;
+            }
+            100% {
+            opacity: 1;
+            }
+        }
+        .text-area {
+            background: rgb(255, 255, 255);
+            color: rgb(26, 26, 26);
+            padding: 5px 20px;
+            border-radius: 10px;
+            margin: 0px 0;
+            text-align: center;
+            word-wrap: break-word;
+            line-height: 1.4;
+            font-size: 1.5em;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        .body-image {
+    background: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
+    padding: 0 20px; /* 불필요한 패딩 제거 */
+    border-radius: 10px;
+    margin: 10; /* 여백을 0으로 설정 */
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-size: 1.5em;
+    text-align: left;
+    width: 100%; /* 100% 너비로 설정 */
+    max-width: 100%; /* 최대 너비 100%로 설정 */
+    box-sizing: border-box; /* padding을 포함한 너비 계산 */
+    display: flex; /* 부모 요소에 flex 적용 */
+    justify-content: center; /* 자식 요소를 수평 중앙에 정렬 */
+    align-items: center; /* 자식 요소를 수직 중앙에 정렬 */
+}
+
+/* 트위터 임베디드 콘텐츠 스타일을 수정하여 부모 요소의 100% 너비를 채우게 함 */
+.body-image blockquote {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* 100% 너비로 설정 */
+}
+
+/* 트위터 임베디드 iframe 스타일을 수정 */
+.body-image iframe {
+    width: 100% !important; /* 100% 너비로 설정 */
+    height: auto;
+    border: none;
+    display: block;
+}
+
+/* buy-area 이미지와 텍스트의 여백 균일화 */
+.buy-area img {
+    width: 65px;
+    height: 65px;
+    margin: 0 15px; /* 좌우 여백을 균일하게 조정 */
+    object-fit: contain; /* 이미지 비율 유지 */
+    flex-shrink: 0; /* 이미지가 줄어들지 않도록 고정 */
+}
+
+/* buy-area의 정렬 보완 */
+.buy-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 내용이 왼쪽에서부터 정렬 */
+    background: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
+    padding: 10px 20px; /* 좌우 균일한 패딩 */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 900px; /* 중앙 정렬을 위해 고정된 최대 너비 추가 */
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.5em;
+}
+
+/* 텍스트 영역 보완 */
+.buy-area .text {
+    flex: 1; /* 텍스트가 남은 공간을 차지하도록 설정 */
+    word-wrap: break-word;
+    text-align: left; /* 텍스트 정렬 */
+}
+
+
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .donut-chart-container {
+                width: 90%;
+            }
+
+            .public-sale-text, .contributors-artist-text {
+                font-size: 0.1em !important;
+            }
+        }
+        .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 세로 정렬 */
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.buynow {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2em;
+    border: 2px solid rgb(0, 0, 0); /* Set a proper border */
+    background: rgb(37, 37, 37);
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px 30px; /* Add padding for better button shape */
+    border-radius: 30px; /* Makes the button rounded */
+    text-align: center;
+    margin: 5px auto;
+    position: relative; /* Required for hover effect */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.buynow:hover {
+    background: rgb(255, 255, 255);
+    color: #222222;
+    animation: shake 0.3s infinite; /* Adds the shaking animation */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+/* To center the button on the page */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    justify-content: center; /* 중앙 정렬 */
+    gap: 0; /* 버튼 간 간격 추가 */
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.button-container button {
+    flex: 0 1 calc(50% - 10px); /* 2열 기준 버튼 크기 (간격 포함) */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+@media (max-width: 600px) {
+    .button-container button {
+        flex: 0 1 100%; /* 1열로 버튼 크기 조정 */
+    }
+}
+
+
+.buttons a {
+    display: inline-block;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    width: auto;
+    text-align: center;
+    margin: -12px auto;
+    padding: 0px 0;
+}
+
+.buttons a:hover {
+    background: #e38f00;
+    color: rgb(0, 0, 0);
+    transform: scale(1.05); /* 살짝 확대 효과 */
+}
+
+.buttons img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .full-width-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    background: rgb(255, 255, 255);
+}
+
+.full-width-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .full-width-image-container img {
+        width: 100%;
+    }
+}
+.sub-area {
+    display: flex; /* Flexbox 활성화 */
+    flex-wrap: wrap; /* 줄바꿈 가능하도록 설정 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 15px; /* 로고들 간의 간격 */
+    padding: 50px; /* 내부 패딩 */
+}
+.sub-text1 {
+    display: flex; /* 각 로고를 Flexbox 요소로 설정 */
+    align-items: center; /* 로고 수직 중앙 정렬 */
+    justify-content: center; /* 로고 수평 중앙 정렬 */
+    margin: 0; /* 개별 마진 제거 (간격은 gap으로 관리) */
+    width: 70px; /* 로고 크기 고정 */
+    height: 70px; /* 로고 크기 고정 */
+    border-radius: 50%; /* 로고를 동그랗게 만듦 */
+    overflow: hidden; /* 동그란 크기 밖의 내용 숨김 */
+}
+
+.sub-text1 img {
+    width: 100%; /* 로고 이미지 크기를 요소에 맞춤 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지하며 잘림 방지 */
+}
+
+a:link {
+  color : rgba(255, 236, 143, 0.881);
+}
+a:visited {
+  color : rgba(255, 232, 118, 0.881);
+}
+a:hover {
+  color : rgb(255, 255, 255);
+}
+a:active {
+  color : rgb(255, 255, 255)
+}
+.highlight {
+    color: #e38f00;
+}
+
+
+
+
+.copy-button.reverse {
+    background-color: #e38f00;
+    color: #ffffff;
+}
+
+.relative {
+    position: relative!important;
+}
+.inset-0 {
+    inset: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.ml-2 {
+    margin-left: 1.20em!important;
+}
+
+.mb-1em {
+    margin-bottom: 0em!important;
+}
+.text-2xl {
+    font-size: 30px;
+    font-weight: 600;
+}
+.text-base {
+    font-size: 24px;
+}
+.text-sm {
+    font-size: 15px!important;
+}
+
+.text-sm2 {
+    font-size: 15px!important;
+}
+.mt-1em {
+    margin-top: 0em;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.fcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gap-10 {
+    gap: 10px;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e2e2e2;
+    padding: 4px;
+    border-radius: 999px;
+}
+.progress-inner {
+    min-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 136, 0);
+    color: #ffffff;
+    border-radius: 999px;
+    height: 40px;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0, 0.25);
+}
+
+.tag-treasury {
+    background-color: rgb(255, 136, 0);
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+    </style>
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="BITCAT - Bitcoin's Mascot">
+    <meta property="og:description" content="Designed by Bitcoin">
+    <meta property="og:image" content="data/thumb.jpg">
+    <meta property="og:url" content="https://solanabitcat.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BITCAT - Bitcoin's Mascot">
+    <meta name="twitter:description" content="Designed by Bitcoin">
+    <meta name="twitter:image" content="data/thumb.jpg">
+</head>
+<body>
+    <header>
+        <video autoplay muted loop playsinline>
+            <source src="data/back.webm" type="video/webm">
+            <source src="data/back.mp4" type="video/mp4">
+        </video>
+        <a href="#more" class="scroll-down-button"></br>meow♥</a>
+        <div class="header-title">Bitcoin's Mascot on Solana</div>
+        <img src="data/bitcat.png" alt="Logo" class="logo">
+        <button class="copy-button" onclick="copyToClipboard()">
+            <i class="fas fa-copy"></i> <!-- 복사 아이콘 -->
+            <span class="button-text" id="Address">4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump</span> <!-- 복사할 텍스트 -->
+        </button>
+          <script>
+        function copyToClipboard(selector) {
+    const textElement = document.getElementById(selector || 'Address');
+    if (textElement) {
+        const text = textElement.textContent; // 복사할 텍스트 가져오기
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert('Copied: ' + text); // 복사 성공 시 알림
+            })
+            .catch((err) => {
+                console.error('Failed to copy text: ', err); // 오류 발생 시 메시지 출력
+            });
+    } else {
+        console.error('Element with id="Address" not found'); // 요소가 없을 경우
+    }
+}
+          </script>
+          <div class="button-container">
+            <a href="universe" class="game"><i class="fa-brands fa-bitcoin"></i> Launch App</a>
+            <span style="position: relative; top: 325px; width: 100%; text-align: center; color: #fff; z-index: 100;">AI Agents | Games | DAO</span>
+        </div>
+        <div class="bitcat-container">
+            <img src="data/bitcat.gif" alt="bitcat Image" id="bitcat-image">
+        </div>
+    </header>
+    <br>
+
+
+
+
+    <style>
+
+.image-container {
+    width: 100%;
+    position: relative; /* 상대 위치 설정 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    z-index: 10000;
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    bottom: 220px;  /* 이미지 아래쪽에 위치 */
+    left: 50%;     /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬 */
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3000; /* 버튼을 이미지 위로 표시 */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+#caption {
+    color: #ccc;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.frame {
+    position: absolute; /* 절대 위치 설정 */
+    top: 0; /* 상단 정렬 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 액자 너비 */
+    height: auto; /* 자동 비율 유지 */
+    pointer-events: none; /* 클릭 이벤트 무시 */
+}
+       @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+       .sour-gummy-fonts {
+            font-family: "Sour Gummy", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 100;          /* 글꼴 굵기 */
+            font-style: normal;        /* 기울임체 여부 */
+            font-variation-settings: "wdth" 500; /* 너비 조정 */
+       }
+
+       body {
+            font-family: 'Sour Gummy', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e38f00; /* 배경 색상 */
+       }
+
+    </style>
+    <div class="line-container">
+    <h2  id="more" data-text="THE CUTEST MASCOT OF BITCOIN">THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ THE CUTEST MASCOT OF BITCOIN ♥ </h2>
+</div>
+<div class="sub-area">
+            <a href="https://x.com/bitcat_sol_" target="_blank"><img src="data/x.png" class="sub-text1"></a>
+            <a href="https://t.me/SolanaBitcat" target="_blank"><img src="data/tg.png" class="sub-text1"></a>
+            <a href="https://t.me/BitCatCN_CTO" target="_blank"><img src="data/tgcn.png" class="sub-text1"></a>
+            <a href="https://discord.gg/59HFjFc9G4" target="_blank"><img src="data/discord.png" class="sub-text1"></a>
+            <a href="https://www.coingecko.com/en/coins/bitcat-3" target="_blank"><img src="data/cg.png" class="sub-text1"></a>
+            <a href="https://coinmarketcap.com/dexscan/solana/EJUgQQABcKXEiERGkUFXM45swGvSFoi8p7fnAcyErTDK/" target="_blank"><img src="data/cmc.png" class="sub-text1"></a>
+            <a href="https://dexscreener.com/solana/ejugqqabckxeiergkufxm45swgvsfoi8p7fnacyertdk" target="_blank"><img src="data/dex.png" class="sub-text1"></a>
+            <a href="https://www.dextools.io/app/en/solana/pair-explorer/EJUgQQABcKXEiERGkUFXM45swGvSFoi8p7fnAcyErTDK?t=1732190587774" target="_blank"><img src="data/tools.png" class="sub-text1"></a>
+            <a href="https://birdeye.so/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump?chain=solana" target="_blank"><img src="data/be.png" class="sub-text1"></a>
+            </div>
+        <div class="button-container" style="gap: 20px; width: 100%; max-width: 500px; margin: 0 auto;">
+    <a href="https://jup.ag/swap/SOL-4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" class="buynow"></i>Buy Now <i class="fa-solid fa-paw"></i></a></div>
+    <div class="container">
+        <div class="single-container">
+            <h2>CROWDFUNDING</h2>
+        </div>
+        <div class="text-area">
+            <p class="highlight text-center text-2xl">
+                Fund Allocation
+            </p>
+            <p class="text-base text-center">
+                <a href="https://www.cls.global/" target="_blank">
+                    <img style="width: 100%;cursor: pointer;" src="data/cls.png" />
+                </a>
+                <br>
+                The BITCAT CTO team has 
+                <strong> 
+                    completed  a 
+                    <a 
+                        href="https://x.com/CoinLiquidity/status/1869046873459220817" 
+                        target="_blank" 
+                        style="color: black;"
+                    >
+                        contract
+                    </a>
+                    with
+                    <a  
+                        href="https://www.cls.global/" 
+                        target="_blank"
+                        style="color: black;"
+                    > 
+                        the CLS GLOBAL 
+                    </a>
+                </strong>
+                and is currently 
+                <strong> raising funds for  liquidity provision through crowdfunding.</strong>
+            </p>
+            <p>
+                <p class="highlight text-center text-2xl">
+                    Funding Target
+                </p>
+                <p class="text-base text-center">
+                <strong>$30K worth of $BITCAT</strong>
+            </p>
+            <p class="fcc gap-10 text-sm">
+                <span class="tag-treasury">TREASURY</span>
+                <span>
+                    <span id="amount-bitcat"></span>
+                    <span>BITCAT =</span>
+                    <span id="dollar-bitcat"></span>
+                </span>
+            </p>
+            <div class="text-sm mt-1em">
+                <div class="progress-container">
+                    <div id="progress-bitcat" class="progress-inner text-sm"></div>
+                </div>
+            </div>
+            <p>
+                <p class="text-base text-center">
+                <strong>$30K USDC + SOL</strong>
+            </p>
+            <p class="fcc gap-10 text-sm">
+                <span class="tag-treasury">TREASURY</span>
+                <span>
+                    <span id="amount-usdc"></span>
+                    <span>USDC +</span>
+                    <span id="amount-sol"></span>
+                    <span>SOL =</span>
+                    <span id="dollar-sol-usdc"></span>
+                </span>
+            </p>
+            <div class="text-sm mt-1em">
+                <div class="progress-container">
+                    <div id="progress-sol-usdc" class="progress-inner text-sm"></div>
+                </div>
+            </div>
+            <p class="text-center text-2xl text-center highlight">
+                Multi-Sig Wallet Address (4/10)
+            </p>
+            <div class="fcc">
+                <button class="copy-button reverse relative inset-0 m-0 mb-1em mt-1em" onclick="copyToClipboard('donateAddress')">
+                    <i class="fas fa-copy"></i> <!-- 복사 아이콘 -->
+                    <span class="button-text" id="donateAddress">2iayT6ppVjZczeYPVWSf6HVJTQJNKNainawRiri4xGXC</span> <!-- 복사할 텍스트 -->
+                </button>
+            </div>
+            <p class="text-base text-center"><strong>Please donate to this address for crowdfunding.</strong></p>
+            <p class="text-base text-center">
+                <i class="fa fa-users"></i>
+<br>With small contributions, <br>our 20K-strong community can achieve this goal together!
+            </p>
+        </div>
+
+        <div class="single-container">
+            <h2>BITCAT PRICE</h2>
+        </div>
+        <div class="text-area" style="flex-direction: column; text-align: center; font-size: 2em; font-weight: 800;">
+            <div>
+                <span>$</span> 
+                <span id="bitcat-price-usdt" style="font-size: 1.2em; font-weight: 800;"></span>
+            </div>
+            <!-- <div>BitCat Amount: 1B</div> -->
+        </div>
+
+        <div class="single-container">
+            <h2>BITCOIN'S MASCOT</h2>
+        </div>
+        <div class="grid-2-col">
+            <div class="body-image">
+                <blockquote class="twitter-tweet"><p lang="qme" dir="ltr"><a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#Bitcoin</a> <a href="https://t.co/Z3OSPyFbC9">pic.twitter.com/Z3OSPyFbC9</a></p>&mdash; Bitcoin (@Bitcoin) <a href="https://twitter.com/Bitcoin/status/1857419117025808830?ref_src=twsrc%5Etfw">November 15, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="text-area">
+                <p><i class="fa-brands fa-bitcoin"></i> Bitcat was created 7 seconds after Bitcoin posted the AI-generated cat mascot on X at 13:43:21 UTC on Nov 15, 2024.</p>
+                    <img src="data/7sec.png" alt="The Origin of Bicat" class="responsive-image" onclick="openModal(this)">
+                    <p><i class="fa-brands fa-bitcoin"></i> Bitcat is Bitcoin’s mascot and a symbol of luck, growing in a community-driven way.</p>
+                    <div class="image-container">
+                </div>
+                <!-- Modal -->
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="modalImage">
+                    <div id="caption"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openModal(img) {
+                var modal = document.getElementById("imageModal");
+                var modalImg = document.getElementById("modalImage");
+                var caption = document.getElementById("caption");
+                
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                caption.innerHTML = img.alt;
+            }
+            
+            function closeModal(event) {
+                // 클릭된 부분이 modal 자체일 때 모달을 닫음
+                if (event.target === event.currentTarget || event.target.classList.contains('close')) {
+                    var modal = document.getElementById("imageModal");
+                    modal.style.display = "none";
+                }
+            }
+            
+            // .close 버튼에 클릭 이벤트 리스너 추가
+            document.querySelector('.close').addEventListener('click', closeModal);
+            
+            // 배경 클릭 시 모달을 닫을 수 있도록 배경에 이벤트 리스너 추가
+            document.getElementById('imageModal').addEventListener('click', closeModal);
+            </script>
+            
+        <div class="single-container">
+            <h2>BITCATNOMICS</h2>
+        </div>
+    <div class="container">
+    <div class="buy-area">
+        <a href="https://solscan.io/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" target="_blank"><img src="data/smallcat.png" alt="Phantom Logo" class="icon"></a>
+        <div class="text">
+            <p><strong class="highlight">$BITCAT</strong> / <i class="fa-solid fa-globe"></i> <strong>Network : Solana</strong> / <i class="fa-solid fa-cat"></i> <strong>Total Supply :
+                1,000,000,000 </strong> / <i class="fa-solid fa-fire"></i> <strong>LP : Burnt </strong> / <i class="fa-solid fa-circle-check"></i> <strong>Contract : renounced</strong> /
+                <strong class="highlight">Fully Community-Driven</strong></p>
+        </div>
+
+    </div>
+    <div class="button-container">
+        <a href="data/BitCat_Whitepaper.pdf"  class="buynow"></i><i class="fa-solid fa-file-pdf"></i> Whitepaper (EN)
+        <a href="data/BitCat_Whitepaper_CN.pdf" class="buynow"></i><i class="fa-solid fa-file-pdf"></i> Whitepaper (中文)</a>
+    </div>
+
+        <div class="container">
+    </div>
+    <div class="single-container">
+        <h2></h2>
+    </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>HOW TO BUY?</h2>
+        </div>
+        <div class="buy-area">
+    <a href="https://phantom.app/" target="_blank"><img src="data/phantom.png" alt="Phantom Logo" class="icon"></a>
+    <div class="text">
+        <p><strong>Step 1 - </strong>Download the Phantom app for mobile users, and download the Phantom Chrome extension for desktop users.</p>
+    </div>
+</div>
+<div class="buy-area">
+    <a href="https://phantom.app/learn/crypto-101/best-solana-wallet" target="_blank"><img src="data/solana.png" alt="Phantom Logo" class="icon"></a>
+    <div class="text">
+        <p><strong>Step 2 - </strong>Fund your wallet with Solana, you can buy Solana from an exchange or cross chain swap and send it to your wallet.</p>
+    </div>
+</div>
+<div class="buy-area">
+    <a href="https://jup.ag/swap/SOL-4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump" target="_blank"><img src="data/jupiter.png" alt="Phantom Logo" class="icon"></a>
+    <div class="text">
+        <p><strong>Step 3 - </strong>Go to Jupiter and swap your Solana for $BITCAT. (We recommend using Jupiter to avoid MEV bots.)</p>
+    </div>
+</div>
+        </div>
+    <div class="container">
+        <div class="single-container">
+            <h2>LISTED ON</h2>
+        </div>
+        <div class="buttons-grid-2-col">
+            <div class="chat-container">
+                <div class="single-container buttons">
+                    <a href="https://www.gate.io/trade/BITCAT_USDT" target="_blank"><img src="data/gate.png"></a>
+                </div>
+                <div class="single-container buttons"><a href="https://www.mexc.com/en-GB/exchange/BITCAT_USDT" target="_blank"><img src="data/mexc.png"></a>
+                </div>
+                <div class="single-container buttons"><a href="https://www.xt.com/en/trade/bitcat_usdt" target="_blank"><img src="data/xtcom.png"></a>
+                </div>
+                <div class="single-container buttons"><a href="https://www.zke.com/en_US/trade/BITCAT_USDT?type=spot" target="_blank"><img src="data/zke.png"></a>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="single-container buttons"><a href="https://www.venkate.io/en_US/trade/BITCAT_USDT?type=spot" target="_blank"><img src="data/venkate.png"></a>
+                </div>
+                <div class="single-container buttons"><a href="https://www.coinex.com/en/exchange/BITCAT-USDT" target="_blank"><img src="data/coinex.png"></a>
+                </div>
+                <div class="single-container buttons"><a href="https://www.kcex.com/exchange/BITCAT_USDT" target="_blank"><img src="data/kcex.png"></a>
+                </div>
+                <div class="single-container buttons"><a href="https://www.solcex.cc/en_US/trade/BITCAT_USDT?type=spot" target="_blank"><img src="data/solcex.png"></a>
+                </div>
+                </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="single-container">
+            <h2>BITCAT MEMES</h2>
+        </div>
+        <div class="meme-container">
+        <div class="grid-2-col">
+            <div class="meme-image meme1">
+                <img src="data/meme1.webp" alt="meme1">
+            </div>
+            <div class="meme-image meme2">
+                <img src="data/meme2.webp" alt="meme2">
+            </div>
+            <div class="meme-image meme3">
+                <img src="data/meme3.webp" alt="meme3">
+            </div>
+            <div class="meme-image meme4">
+                <img src="data/meme4.webp" alt="meme4">
+            </div>
+            <div class="meme-image meme5">
+                <img src="data/meme5.webp" alt="meme5">
+            </div>
+            <div class="meme-image meme6">
+                <img src="data/meme6.webp" alt="meme6">
+            </div>
+            <div class="meme-image meme7">
+                <img src="data/meme7.webp" alt="meme7">
+            </div>
+            <div class="meme-image meme8">
+                <img src="data/meme8.webp" alt="meme8">
+            </div>
+            <div class="meme-image meme8">
+                <img src="data/meme9.webp" alt="meme8">
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="sub-area">
+            <a href="https://x.com/bitcat_sol_" target="_blank"><img src="data/x.png" class="sub-text1"></a>
+            <a href="https://t.me/SolanaBitcat" target="_blank"><img src="data/tg.png" class="sub-text1"></a>
+            <a href="https://t.me/BitCatCN_CTO" target="_blank"><img src="data/tgcn.png" class="sub-text1"></a>
+            <a href="https://discord.gg/59HFjFc9G4" target="_blank"><img src="data/discord.png" class="sub-text1"></a>
+            <a href="https://www.coingecko.com/en/coins/bitcat-3" target="_blank"><img src="data/cg.png" class="sub-text1"></a>
+            <a href="https://coinmarketcap.com/dexscan/solana/EJUgQQABcKXEiERGkUFXM45swGvSFoi8p7fnAcyErTDK/" target="_blank"><img src="data/cmc.png" class="sub-text1"></a>
+            <a href="https://dexscreener.com/solana/ejugqqabckxeiergkufxm45swgvsfoi8p7fnacyertdk" target="_blank"><img src="data/dex.png" class="sub-text1"></a>
+            <a href="https://www.dextools.io/app/en/solana/pair-explorer/EJUgQQABcKXEiERGkUFXM45swGvSFoi8p7fnAcyErTDK?t=1732190587774" target="_blank"><img src="data/tools.png" class="sub-text1"></a>
+            <a href="https://birdeye.so/token/4j9bDg7iWNah1Qa61rrqwWZMtEdqV3fV56SzyhfNpump?chain=solana" target="_blank"><img src="data/be.png" class="sub-text1"></a>
+            </div>
+        <div class="footer-container">
+            <p><i class="fas fa-envelope"></i> Business Contact : <strong>bitcatcto@proton.me</strong><br><p><strong>Operated by BITCAT Community</strong><br><br><strong>Designed by <i class="fa-brands fa-bitcoin"></i> Bitcoin</strong></p>
+        </div>
+    </div>
+    </footer>
+    <div class="music-player">
+        <button id="playPauseBtn" class="play-pause-button">🔇</button>
+        <audio id="audio" src="data/bitcat.mp3"></audio>
+    </div>
+    <script>
+        // Scroll down button functionality
+const scrollLink = document.querySelector(".scroll-down-button");
+
+function scrollToContent() {
+    const moreContent = document.getElementById("more");
+    moreContent.scrollIntoView({ behavior: "smooth" });
+}
+
+scrollLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    scrollToContent();
+});
+
+// Music player functionality
+const audioElement = document.getElementById("audio");
+const playPauseButton = document.getElementById("playPauseBtn");
+
+playPauseButton.addEventListener("click", function () {
+    if (audioElement.paused) {
+        audioElement.play().catch((error) => {
+            console.error("Playback error: ", error);
+        });
+        playPauseButton.textContent = "🎧"; // Change to pause icon
+    } else {
+        audioElement.pause();
+        playPauseButton.textContent = "🔇"; // Change to play icon
+    }
+});
+
+/*
+* update donate progress
+* BITCAT_TOTAL  Total amount of BITCAT（unit: 1amount）
+* USDC_SOL_TOTAL Total value of USDC and SOL (unit: 1$)
+* */
+const updateProgress = (id, progress) => {
+    const el = document.getElementById(id)
+    if (el) {
+        el.style.width = `${progress}%`
+        el.innerText = `${progress}%`
+    }
+}
+
+const BITCAT_TOTAL = 10 * 1000 * 1000 // 10M
+const calcBITCAT = (amount) => {
+    return (amount / BITCAT_TOTAL * 100).toFixed(2)
+}
+
+const USDC_SOL_TOTAL = 3.0 * 10 * 1000 // 3.6w$
+const calcUSDCAndSOL = (value) => {
+    return (value / USDC_SOL_TOTAL * 100).toFixed(2)
+}
+
+// request donate data
+const getDonateData = () => {
+    return fetch('https://v4-api.squads.so/balancesDAS/2iayT6ppVjZczeYPVWSf6HVJTQJNKNainawRiri4xGXC?sendAll=true&cacheBypass=false&useProd=true')
+        .then(res => res.json())
+        .then((json) => {
+            return json.balances.reduce((ret, cur) => {
+                ret[cur.symbol] = cur
+                return ret
+            }, {})
+        })
+}
+
+// cycle fn, default 3s
+const loop = (fn, delay = 3000) => {
+    let timer = setTimeout(async () => {
+       await fn()
+       clearTimeout(timer)
+       timer = null
+       loop(fn, delay)
+    }, delay)
+}
+
+// storing recorded progress
+const localeData = (bitcat_progress, usdc_sol_progress) => {
+    localStorage.setItem('progress-bitcat', bitcat_progress)
+    localStorage.setItem('progress-sol-usdc', usdc_sol_progress)
+}
+
+// Restoring recorded progress
+const relocaleData = () => {
+    updateProgress('progress-bitcat', localStorage.getItem('progress-bitcat'))
+    updateProgress('progress-sol-usdc', localStorage.getItem('progress-sol-usdc'))
+}
+
+const fillText = (id, text) => {
+    const el = document.getElementById(id)
+    el.innerText = text
+
+    localStorage.setItem(id, text)
+}
+
+const relocaleFillText = () => {
+    const ids = ['amount-bitcat', 'dollar-bitcat', 'amount-usdc', 'amount-sol', 'dollar-sol-usdc']
+
+    ids.forEach((id) => {
+        const el = document.getElementById(id)
+
+        el.innerText = localStorage.getItem(id)
+    })
+}
+
+
+relocaleData()
+
+relocaleFillText()
+
+
+loop(() => {
+    return getDonateData().then((data) => {
+        const bitcat_progress = calcBITCAT(data['BITCAT'].uiAmount)
+        updateProgress('progress-bitcat', bitcat_progress)
+        fillText('amount-bitcat', data['BITCAT'].uiAmount.toFixed(2))
+        fillText('dollar-bitcat', '$' + data['BITCAT'].uiPrice.toFixed(2))
+        fillText('bitcat-price-usdt', data['BITCAT'].pricePerUnit )
+        upDateBitCatPriceNumber()
+
+
+        const usdc_sol_value = data['USDC'].uiPrice + data['SOL'].uiPrice
+        const usdc_sol_amount = data['SOL'].uiAmount
+        const usdc_usdc_amount = data['USDC'].uiAmount
+        const usdc_sol_progress = calcUSDCAndSOL(usdc_sol_value)
+        updateProgress('progress-sol-usdc', usdc_sol_progress)
+        fillText('amount-usdc', usdc_usdc_amount.toFixed(2))
+        fillText('amount-sol', usdc_sol_amount.toFixed(2))
+        fillText('dollar-sol-usdc', '$' + usdc_sol_value.toFixed(2))
+
+        localeData(bitcat_progress, usdc_sol_progress)
+    })
+})
+
+    </script>
+
+
+    <script>
+        const upDateBitCatPriceNumber = () => {
+            const bitcatPriceInfo = document.getElementById('bitcat-price-usdt')
+            const finalPrice = parseFloat(bitcatPriceInfo.innerText)
+            bitcatPriceInfo.innerText = '0';
+            const updateNumber = () => {
+                const d = parseFloat(bitcatPriceInfo.innerText)
+                const increment = (finalPrice - d) / 3
+                if (d < finalPrice) {
+                    bitcatPriceInfo.innerText = (d+increment).toFixed(6)
+                    setTimeout(updateNumber, 100)
+                } else {
+                    bitcatPriceInfo.innerText = finalPrice
+                }
+            }
+            updateNumber()
+        }
+        
+    </script>
+</body>
+</html>
